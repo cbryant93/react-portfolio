@@ -19,7 +19,7 @@ const Header = () => {
             <h1>Christian Bryant</h1>
         </div>
 
-        <nav className="navbar">
+        <nav className={active ? 'navbar active' : 'navbar'}>
             <ul>
         <div className= "closed">
             <Close className = 'close' onClick ={showMenu}/>
