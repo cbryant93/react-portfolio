@@ -1,6 +1,7 @@
-import { GitHub, Instagram, LinkedIn } from "@material-ui/icons";
+import { GitHub, LinkedIn } from "@material-ui/icons";
 import React from "react";
 import './styles/Main.scss'
+import me from './assests/me.jpg'
 
 const Main =() => {
     return(
@@ -17,13 +18,22 @@ const Main =() => {
                         <p>I am a SDET Engineer</p>
 
                         <div className = "icons">
-                            <Instagram className="icon"/>
                             <LinkedIn className="icon"/>
                             <GitHub className="icon"/>
+                        </div>
+
+                        <div className="buttons">
+                            <button>Contact Me</button>
+                            <button>Hire Me</button>
+
                         </div>
                    
                     </div>
                 
+                </div>
+
+                <div className="main__img">
+                    <img src={me} alt=" "/>
                 </div>
 
             </div>
