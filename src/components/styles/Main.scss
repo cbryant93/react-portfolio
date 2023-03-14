@@ -1,0 +1,36 @@
+.main {
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: white;
+    position: relative;
+
+}
+
+.main__container {
+    display: flex;
+    height: 90vh;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: chocolate;
+}
+
+.main__content {
+    margin-left: 5.445rem;
+    background-color: aquamarine;
+}
+
+.text {
+    line-height: 55px;
+    p {
+        color: rgb(91, 89, 192);
+        text-transform: uppercase;
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+
+}
