@@ -54,8 +54,6 @@
 
     button {
         padding: 15px 40px;
-        margin-top: 2rem;
-        margin-right: 1rem;
         background:-moz-repeating-linear-gradient(black);
         color: #651414;
         border: 1px solid #fff;
@@ -63,15 +61,16 @@
         border-radius: 10px;
         text-transform: uppercase;
         font-weight: bolder;
+        justify-content: space-between;
     }
 }
 
 .main__img {
-    clip-path: circle(35% at 45% 51%);
+    clip-path: circle(35% at 50% 50%);
     cursor: pointer;
     width: 400px; /* set the width to 200 pixels */
     height: 265.47px; /* set the height to 200 pixels */
-    margin-right: 3rem;
+
 
 
 
@@ -81,3 +80,81 @@
         height: 100%; /* set the image height to 100% of the container */
     }
 }
+
+@media (max-width:1200px) 
+{
+    
+
+    .text {
+        white-space: nowrap;
+        line-height: 30px;
+        p {
+            font-size: 14px;
+        }
+    
+        h1 {
+            font-size: 30px;
+        }
+    
+    }
+
+
+    .buttons button {
+        padding: 8px 20px;
+        
+    }
+    .icons {
+        margin-right: 1rem;
+        .icon {
+            font-size: 25px;
+        }
+    }
+
+
+}
+
+@media (max-width:600px) {
+
+    .main__content {
+        margin-left: 0;
+    }
+
+    .main__container {
+        text-align: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .main__img img {
+        max-width: 100%;
+        height: auto;
+      }
+
+    .text {
+        h1 {
+            font-size: 23px;
+        }
+        p {
+            color: #000;
+            font-size: 11px;
+        }
+    }
+
+    .buttons button{
+        justify-content: space-evenly; 
+        align-items: center;
+        background-color: burlywood;
+    }
+
+    .icons{ 
+        margin-left: 1.5rem;
+        justify-content: center;
+    .icon {
+        color: firebrick;
+        
+    }
+}
+}
+
+
+
