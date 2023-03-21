@@ -1,0 +1,68 @@
+.contact{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color:rgb(108, 9, 26);
+    padding: 2rem;
+}
+
+A{
+    color: gray;
+    text-decoration: none;
+
+}
+
+.inputs{
+    width: 40%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color:lightpink;
+    text-align: center; 
+    padding: 1rem;
+
+}
+
+.contact h1{
+    color: rgb(204, 113, 250)
+    
+
+}
+
+input{
+    width: 70%;
+    align-items: center;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.message {
+    padding-bottom: 12rem;
+    width: 70%;
+}
+
+button{
+    padding: 10px 40px;
+    background: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    border: 1px solid blue;
+    color: rgb(255, 102, 128);
+    text-transform: uppercase;
+    width: 40%;
+    margin: 0 auto; 
+}
+
+@media(max-width:550px) {
+    .inputs{
+        width: 80%;
+
+        input{
+            padding: 15px;
+        }
+    }
+}
