@@ -4,7 +4,7 @@ import chris from './assests/me2.JPG'
 
 const Section = () => {
     return(
-        <div className="sections">
+        <div className="sections" id="About">
 
             <div className="section__container">
 

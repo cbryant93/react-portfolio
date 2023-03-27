@@ -1,8 +1,7 @@
 import  React, { useState } from "react";
 import "./styles/Header.scss"
 import { Close, MenuOutlined } from "@material-ui/icons";
-import {A} from 'hookrouter'; 
-
+import {Link} from 'react-router-dom';
 
 const Header = () => {
 
@@ -24,24 +23,24 @@ const Header = () => {
         <div className= "closed">
             <Close className = 'close' onClick ={showMenu}/>
         </div>
-            <li>
-            <A className='Link' href='/'>HOME</A> 
-            </li>
-            <li>
-            <A className='Link' href='/'>ABOUT ME</A> 
-            </li>
-            <li>
-            <A className='Link' href='/'>SKILLS</A> 
-            </li>
-            <li>
-            <A className='Link' href='/'>PROJECTS</A> 
-            </li>
-            <li>
-            <A className='Link' href='/'>BLOG</A> 
-            </li>
-            <li>
-            <A className='Link' href='/'>CONTACT ME</A> 
-            </li>
+            <Link className='Link' to='/'>
+            <li>HOME</li>
+            </Link>
+            <Link className='Link' to='/about'>
+            <li>ABOUT</li>
+            </Link>
+            <Link className='Link' to='/skills'>
+            <li>SKILLS</li>
+            </Link>
+            <Link className='Link' to='/projects'>
+            <li>PROJECTS</li>
+            </Link>
+            <Link className='Link' to='/'>
+            <li>BLOG</li>
+            </Link>
+            <Link className='Link' to='/contact'>
+            <li>CONTACT ME</li>
+            </Link>
             </ul>
         </nav>
 
