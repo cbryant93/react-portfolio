@@ -1,7 +1,8 @@
 import  React, { useState } from "react";
 import "./styles/Header.scss"
 import { Close, MenuOutlined } from "@material-ui/icons";
-import {Link} from 'react-router-dom';
+import { Link, animateScroll as scroll} from 'react-scroll'
+
 
 const Header = () => {
 
@@ -23,24 +24,30 @@ const Header = () => {
         <div className= "closed">
             <Close className = 'close' onClick ={showMenu}/>
         </div>
-            <Link className='Link' to='/'>
-            <li>HOME</li>
-            </Link>
-            <Link className='Link' to='/about'>
-            <li>ABOUT</li>
-            </Link>
-            <Link className='Link' to='/skills'>
-            <li>SKILLS</li>
-            </Link>
-            <Link className='Link' to='/projects'>
-            <li>PROJECTS</li>
-            </Link>
-            <Link className='Link' to='/'>
-            <li>BLOG</li>
-            </Link>
-            <Link className='Link' to='/contact'>
-            <li>CONTACT ME</li>
-            </Link>
+            <li>
+            <Link to='/'>HOME</Link> 
+            </li>
+
+            <li>
+            <Link to="About" spy={true} smooth={true} offset={0} duration={500}>ABOUT ME</Link> 
+            </li>
+
+            <li>
+            <Link to="Skills" spy={true} smooth={true} offset={0} duration={500}>SKILLS</Link> 
+            </li>
+
+            <li>
+            <Link to="Projects" spy={true} smooth={true} offset={0} duration={500}>PROJECTS</Link> 
+            </li>
+
+            <li>
+            <Link to='/'>BLOG</Link> 
+            </li>
+
+            <li>
+            <Link to="Contact" spy={true} smooth={true} offset={0} duration={500}>CONTACT</Link> 
+            </li>
+
             </ul>
         </nav>
 

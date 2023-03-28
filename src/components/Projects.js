@@ -31,7 +31,7 @@ function Box({ label, onClick }) {
     };
   
     return (
-      <div className="projects">
+      <div className="projects" id='Projects'>
         {popups.map((message, index) => (
           <Popup key={index} message={message} onClose={() => handleClose(index)} />
         ))}

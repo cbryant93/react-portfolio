@@ -4,7 +4,7 @@ import'./styles/Skills.scss'
 
 const Skills = () => {
     return(
-        <div className="skills">
+        <div className="skills" id="Skills">
 
             <div className="skill__container">
 

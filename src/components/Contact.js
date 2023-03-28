@@ -15,11 +15,10 @@ function Contact() {
     console.log(`Name: ${name}`);
     console.log(`Email: ${email}`);
     console.log(`Message: ${message}`);
-    // You can replace the console.log statements with your desired action, such as sending an email or making an API call.
   };
 
   return (
-    <div className="contact">
+    <div className="contact" id="Contact">
         <A href ='/ ' >
             <ArrowBack className ='arrow'/>
         </A>
