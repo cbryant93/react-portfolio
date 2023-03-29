@@ -5,7 +5,7 @@ import me from './assests/me.jpg'
 
 const Main =() => {
     return(
-        <div className= 'main'>
+        <div className= 'main' id="Main">
             
             <div className ="main__container">
                 

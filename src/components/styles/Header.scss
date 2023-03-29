@@ -2,10 +2,29 @@
     width: 100%;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
     z-index: 1;
     background-color: aqua;
-}
+    
+    &:hover:not(.scrolled) {
+      opacity: 1;
+    }
+    
+    &.scrolled {
+      background-color: #fff; /* Change the background color to something other than the original color */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      opacity: 0;
+    }
+  
+    &.scrolled:hover {
+      opacity: 1;
+    }
+  }
+  
 
 
 .header__logo {
