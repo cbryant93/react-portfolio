@@ -16,8 +16,12 @@ if(isset($_POST['email']) && $_POST['email'] != ''){
 
     $to = "cbryant1993@gmail.com";
 
-    // Include the SMTP settings
-    require_once __DIR__ . "/config.php";
+
+    // Set SMTP settings for Gmail
+    $smtpHost = "smtp.gmail.com";
+    $smtpUsername = "cbryant1993@gmail.com";
+    $smtpPassword = "hbdqqonycjtrpbbo";
+    $smtpPort = 587;
 
     // Create a PHPMailer instance
     require_once __DIR__ . "/phpmailer/src/PHPMailer.php";
@@ -25,6 +29,9 @@ if(isset($_POST['email']) && $_POST['email'] != ''){
     require_once __DIR__ . "/phpmailer/src/Exception.php";
     
     $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+    // Enable SMTP debugging if needed
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     // Set the SMTP server and credentials
     $mail->isSMTP();
