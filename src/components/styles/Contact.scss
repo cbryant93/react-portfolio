@@ -6,12 +6,6 @@
     padding: 2rem;
 }
 
-A{
-    color: gray;
-    text-decoration: none;
-
-}
-
 .inputs{
     width: 40%;
     height: 80%;
@@ -40,22 +34,41 @@ input{
     border: none;
 }
 
+
+label{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
 .message {
     padding-bottom: 12rem;
     width: 70%;
 }
 
 button{
+    background-color: #4CAF50;
     padding: 10px 40px;
-    background: none;
     cursor: pointer;
     margin-top: 1rem;
     border: 1px solid blue;
-    color: rgb(255, 102, 128);
+    color: rgb(169, 27, 51);
     text-transform: uppercase;
     width: 40%;
     margin: 0 auto; 
 }
+
+.success-message {
+    background-color: #DFF2BF;
+    color: #4F8A10;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
 
 @media(max-width:550px) {
     .inputs{

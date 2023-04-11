@@ -1,60 +1,58 @@
-import React, { useState } from "react";
-import {ArrowBack } from '@material-ui/icons'
-import {A} from 'hookrouter'; 
-import './styles/Contact.scss'
-
+import React from "react";
+import "./styles/Contact.scss";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Message: ${message}`);
-  };
-
   return (
-    <div className="contact" id="Contact">
-        <A href ='/ ' >
-            <ArrowBack className ='arrow'/>
-        </A>
-        
-    <form className="inputs" onSubmit={handleSubmit}>
-      <div>
-        <h1 htmlFor="name">Name:</h1>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+    <div class="contact" id="Contact">
+      <div className="inputs">
+      <h1>CONTACT ME</h1>
+        <form action="http://localhost/api/contact/index.php" method="POST" class="form">
+          <label htmlFor="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Name..."
+            tabindex="1"
+            required
+          />
+
+          <label htmlFor="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@123.com"
+            tabindex="2"
+            required
+          />
+
+          <label htmlFor="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Hello There!"
+            tabindex="3"
+            required
+          />
+
+          <label htmlFor="message">Message</label>
+          <textarea
+            rows="5"
+            cols="50"
+            id="message"
+            className="message"
+            name="message"
+            placeholder="Enter Message..."
+            tabindex="4"
+          ></textarea>
+
+          <button type="submit" className="btn">
+            Send Message!
+          </button>
+        </form>
       </div>
-      <div>
-        <h1 htmlFor="email">Email:</h1>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <h1 htmlFor="message">Message:</h1>
-        <textarea
-          className="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        ></textarea>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
     </div>
   );
 }
