@@ -8,14 +8,14 @@
     transition: background-color 0.3s ease, opacity 0.3s ease;
     opacity: 1;
     z-index: 1;
-    background-color: aqua;
+    background-color: #0081A7;
     
     &:hover:not(.scrolled) {
       opacity: 1;
     }
     
     &.scrolled {
-      background-color: #fff; /* Change the background color to something other than the original color */
+      background-color: #0081A7; /* Change the background color to something other than the original color */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
       opacity: 0;
     }
@@ -23,12 +23,14 @@
     &.scrolled:hover {
       opacity: 1;
     }
-  }
-  
-
+}
 
 .header__logo {
     margin-left: 2rem;
+    h1{
+        color: rgb(224, 245, 243);
+        text-decoration: double;
+    }
 }
 
 .navbar {
@@ -44,10 +46,10 @@ ul {
        a {
            text-decoration: none;
            text-transform: uppercase;
-           color: #000;
+           color: rgb(253, 252, 220);
 
            &:hover {
-               border-bottom: 3px solid black;
+               border-bottom: 3px solid rgb(253, 252, 220);
            }
        }
    }
@@ -62,6 +64,7 @@ ul {
         display: none;
     }
 }
+
 .closed .close{
     display: none;
 }
@@ -95,7 +98,7 @@ ul {
            margin-block: 2rem;
            a {
                font-size: 20px;
-               color: rgb(40, 36, 36);
+               color: rgb(253, 252, 220);
                font-weight: bolder;
            }
        }
