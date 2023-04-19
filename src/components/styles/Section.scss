@@ -1,7 +1,7 @@
 .sections {
     width: 100%;
     min-height: 100vh;
-    background: rgb(212, 201, 103);
+    background: rgb(224, 245, 243);
     overflow: hidden;
 
 }
@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 2.5rem;
-    background-color:antiquewhite;
+    background-color: rgb(255, 255, 255);
 }
 
 .section__img img{
@@ -30,7 +30,7 @@
     text-align: center;
 
     h1 {
-        color: #fff;
+        color: rgb(240, 113, 103);
         text-transform: uppercase;
         font-size: 55px;
         margin-bottom: 2.125rem;
@@ -38,7 +38,7 @@
 
     p {
         font-weight: bolder;
-        color:darkblue;
+        color:rgb(0, 175, 185);
         border-bottom: 1px solid rgb(0, 0, 0);
         cursor: pointer;
         box-shadow: 2px 2px 15px rgb(0, 0, 0);

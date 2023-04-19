@@ -9,12 +9,12 @@ const Skills = () => {
             <div className="skill__container">
 
                 <div className="skill__content">
-                    <h1>Christian Bryant</h1>
+                    <h1>Skills</h1>
                     <p>Experience in frontend and backend development</p>
-                    <p>JavaScript development</p>
+                    <p>Web Development</p>
                     <p>Java </p>
-                    <p>Python</p>
-                    <p>Professional UI and UX Designer</p>
+                    <p>SQL</p>
+                    <p>Selenium + Cucumber</p>
                 </div>
 
             </div>

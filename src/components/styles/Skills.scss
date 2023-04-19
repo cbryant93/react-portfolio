@@ -1,7 +1,7 @@
 .skills {
     width: 100%;
     min-height: 100vh;
-    background: rgb(65, 132, 102);
+    background: rgb(254, 217, 183);
     overflow: hidden;
 
 }
@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 2.5rem;
-    background-color:lavenderblush;
+
 }
 
 .skill__content {
@@ -20,8 +20,9 @@
     line-height: 70px;
     text-align: center;
 
+
     h1 {
-        color: black;
+        color: rgb(0, 129, 167);
         text-transform: uppercase;
         font-size: 55px;
         margin-bottom: 2.125rem;
@@ -29,12 +30,13 @@
 
     p {
         font-weight: bolder;
-        color:darkblue;
+        color: rgb(240, 113, 103);
         border-bottom: 1px solid rgb(0, 0, 0);
         cursor: pointer;
         box-shadow: 2px 2px 15px rgb(0, 0, 0);
         padding: 6px;
-        margin-block: 7px
+        margin-block: 7px;
+        background-color: white;
         ;
     }
 }
