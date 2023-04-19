@@ -3,6 +3,7 @@ import "./styles/Contact.scss";
 
 function Contact() {
   const [messageSent, setMessageSent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission behavior
@@ -15,15 +16,19 @@ function Contact() {
       method: 'POST',
       body: formData,
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Display success message to user
-        setMessageSent(true);
-
-        // Clear form fields
-        form.reset();
+      .then((response) => {
+        if (response.ok) {
+          setMessageSent(true); // Display success message to user
+          setErrorMessage(""); // Clear any error message
+          form.reset(); // Clear form fields
+        } else {
+          setErrorMessage("An error occurred. Please try again."); // Display error message to user
+        }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setErrorMessage("An error occurred. Please try again."); // Display error message to user
+      });
   }
 
   return (
@@ -75,8 +80,13 @@ function Contact() {
           <button type="submit" className="btn">
             Send Message!
           </button>
+
+          {errorMessage && (
+            <p className="error">{errorMessage}</p>
+          )}
+
           {messageSent && (
-            <p className="success">Your message has been sent!</p>
+            <p className="success">Email sent! Thank you for contacting me.</p>
           )}
         </form>
       </div>

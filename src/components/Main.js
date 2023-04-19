@@ -1,8 +1,9 @@
-import { Email, GitHub, LinkedIn } from "@material-ui/icons";
+import { ArrowDownwardOutlined, Email, GitHub, LinkedIn } from "@material-ui/icons";
 import React from "react";
 import './styles/Main.scss'
 import { Link, animateScroll as scroll } from "react-scroll";
-import me from './assests/me.jpg'
+import me from './assests/me.jpg';
+import cv from './assests/Christian_Bryant_-_Software_QA_Engineer.pdf';
 
 const Main =() => {
     return(
@@ -19,12 +20,15 @@ const Main =() => {
                         <p>I am a SDET Engineer</p>
 
                         <div className="icons">
+                            
                             <a href="https://www.linkedin.com/in/christian-bryant/">
                                 <LinkedIn className="icon"/>
                             </a>
+                            
                             <a href="https://github.com/cbryant93">
                                 <GitHub className="icon"/>
                             </a>
+                            
                             <Link
                             to="Contact"
                             spy={true}
@@ -34,6 +38,13 @@ const Main =() => {
                             >
                             <Email className="icon"/>
                             </Link>
+
+                            <a href={cv} download>
+                            <ArrowDownwardOutlined className="icon"/>                               
+                            </a>
+
+                            
+                            
                         </div>
 
                    
