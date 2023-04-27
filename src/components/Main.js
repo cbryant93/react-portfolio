@@ -2,8 +2,8 @@ import { ArrowDownwardOutlined, Email, GitHub, LinkedIn } from "@material-ui/ico
 import React from "react";
 import './styles/Main.scss'
 import { Link, animateScroll as scroll } from "react-scroll";
-import me from './assests/me.jpg';
-import cv from './assests/Christian_Bryant_-_Software_QA_Engineer.pdf';
+import me from './assets/me.jpg';
+import cv from './assets/Christian_Bryant_-_Software_QA_Engineer.pdf';
 
 const Main =() => {
     return(

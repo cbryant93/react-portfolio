@@ -1,6 +1,6 @@
 import React from "react";
 import'./styles/Section.scss'
-import chris from './assests/me2.JPG'
+import chris from './assets/me2.JPG'
 
 const Section = () => {
     return(

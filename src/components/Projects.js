@@ -1,6 +1,7 @@
 import './styles/Projects.scss';
 import React, { useState } from 'react';
 
+
 function Box({ label, color, onClick, visible }) {
   return (
     <div
