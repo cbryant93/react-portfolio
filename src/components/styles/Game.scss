@@ -11,7 +11,6 @@
     color: yellow;
     font-size: 40px;
     text-align: center;
-
   }
 
   .container {
@@ -27,7 +26,6 @@
     position: relative;
     cursor: url('../assets/game/aim.png'), pointer;
   }
-
 
   .gameStats {
     display: flex;
@@ -103,61 +101,64 @@
   }
   
   .instructions { /* Instuctions div */
-    width: 700px;
-    background: grey;
-    padding: 10px;
+    height: 60%;
+    width: 65%;
+    background: rgb(0, 175, 185);
+    padding: 40px;
     display: none;
+    justify-content: space-evenly;
     text-align: center;
     color: black;
     border-radius: 5%;
     position: absolute;
-    margin-left: 125px;
-    margin-bottom: 20px;
     border: black solid 3px;
   }
   
   .instructions p { /* Instructions text */
+    color:  black;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .instructions h2 { /* Instructions text */
     color: black;
-    font-size: 35px;
+    font-size: 34px;
+    margin-bottom: 30px;
   }
-  
-  
-  .gameover div { /* specific gameover display styling */
-    opacity: 0.5;
+
+  .instructions button{
+    width: 180px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
   }
-  
+
   .gameover { /* Game over display div */
-    width: 400px;
-    background: grey;
+    height: 60%;
+    width: 60%;
+    background: rgb(0, 175, 185);
     padding: 10px;
     display: none;
     text-align: center;
     color: black;
     border-radius: 5%;
     position: absolute;
-    margin-left: 250px;
-    margin-top: 150px;
     border: black solid 3px;
+    opacity: 0.8;
   }
   
-  .gameover p { /* Game over text styling */
+  .gameover h2 { /* Game over text styling */
     color: black;
-    font-size: 35px;
+    font-size: 34px;
   }
   
-  #bResart { /* restart button */
+  .gameover button{ /* restart button */
     width: 180px;
     height: 60px;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 30px;
-  }
-  
-  #back { /* back button */
-    width: 180px;
-    height: 60px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 30px;
   }
