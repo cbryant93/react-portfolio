@@ -1,6 +1,6 @@
 import './styles/Projects.scss';
 import React, { useState } from 'react';
-
+import Game from './Game'; // Add this line if the game component is exported from the file 'Game.js'
 
 function Box({ label, color, onClick, visible }) {
   return (
@@ -18,12 +18,13 @@ function Box({ label, color, onClick, visible }) {
   );
 }
 
-function Popup({ onClose, message }) {
+// Change the Popup to accept a content parameter instead of message
+function Popup({ onClose, content }) {
   return (
     <div className="popup">
       <div className="popup-content">
-        <p>{message}</p>
-        <button onClick={onClose}>Close</button>
+        {typeof content === 'string' ? <p>{content}</p> : content}
+        <button onClick={onClose}>X</button>
       </div>
     </div>
   );
@@ -33,8 +34,8 @@ function Projects() {
   const [popups, setPopups] = useState([]);
   const [visible, setVisible] = useState(true);
 
-  const handleClick = (message) => {
-    setPopups([...popups, message]);
+  const handleClick = (content) => {
+    setPopups([...popups, content]);
     setVisible(false);
   };
 
@@ -45,24 +46,20 @@ function Projects() {
 
   return (
     <div className="projects" id='Projects'>
-      {popups.map((message, index) => (
-        <Popup key={index} message={message} onClose={() => handleClose(index)} />
+      {popups.map((content, index) => (
+        <Popup key={index} content={content} onClose={() => handleClose(index)} />
       ))}
       <div className="box-container">
         <Box
           label="Web Dev Project"
           color="#0081a7"
-          onClick={() =>
-            handleClick(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis turpis non elementum molestie. Praesent mollis hendrerit venenatis. Fusce vehicula, leo vitae tempor pulvinar, erat mi blandit diam, vitae commodo augue mi sed nibh. Vestibulum ullamcorper molestie enim non pharetra. Morbi at nibh magna. In ac nibh nulla. Nam varius mi at felis egestas luctus. Proin dui mauris, scelerisque molestie porta in, blandit sed eros. Nulla fermentum a libero nec aliquet. Aliquam vehicula vel mauris in malesuada. Vivamus ligula eros, fringilla sed convallis id, viverra sed justo. Etiam accumsan ullamcorper pulvinar. Vivamus suscipit libero ac lacus feugiat lacinia. Etiam vulputate dolor erat, vitae commodo mi consectetur dignissim. Ut aliquet gravida lorem, eget tempus justo scelerisque vel.'
-            )
-          }
+          onClick={() => handleClick('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
           visible={visible}
         />
         <Box
           label="Vegan Duck Hunt"
           color="#00afb9"
-          onClick={() => handleClick('Popup message 2')}
+          onClick={() => handleClick(<Game />)} // Set the content to be the Game component when this box is clicked
           visible={visible}
         />
         <Box

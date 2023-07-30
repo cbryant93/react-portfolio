@@ -1,68 +1,109 @@
-    
-.background {
-    width: 100%;
-    min-height: 100vh;
-    background-image: url(../assets/game/view2.jpg);
-    overflow: hidden;
-   
+.gameSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vh;
+  margin: auto;
+  margin-top: -70px; /* Adjust this value as necessary */
+  transform: scale(0.85); /* Adjust this value as necessary */
 }
+
+.background {
+  width: 100vh;
+  background-image: url(../assets/game/view2.jpg);
+  background-size: cover; /* this will scale the image to cover the entire .background area */
+}
+
 
 .Title {
-    color: yellow;
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .container {
-    background-image: url(../assets/game/background.png);
-    width: 1000px;
-    height: 800px;
-    border: 5px solid black;
-    display: flex; /* changed */
-    justify-content: center; /* changed */
-    align-items: center; /* changed */
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    cursor: url('../assets/game/aim.png'), pointer;
-  }
-
-  .gameStats {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-
-  .gameStats div {
-    flex-grow: 1;
+  color: yellow;
+  font-size: 40px;
+  text-align: center;
 }
 
-.gameButtons{
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    text-align: center;
-    width: 50%;
-    height: 50%;
-    
-  }
-  
-  .gameButtons button {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
-  }
+.container {
+  background-image: url(../assets/game/background.png);
+  background-size: cover;
+  width: 80%;
+  height: 77vh;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden; /* change from visible to hidden */
+  position: relative;
+  cursor: url('../assets/game/aim.png'), pointer;
+}
 
-  .duck { /* duck target */
+
+
+.gameStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  position: static;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: black;
+}
+
+.gameStats div {
+  flex-grow: 1;
+}
+
+.gameButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.startButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+  .btn {
+    width: 100% !important; /* Adjust as necessary */
+    margin: 10px 0; /* Gives 10px vertical space between buttons */
+  }
+}
+
+
+@keyframes moveDuck {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-5vh);
+  }
+  50% {
+    transform: translateX(50vw) translateY(0);
+  }
+  75% {
+    transform: translateX(75vw) translateY(5vh);
+  }
+  100% {
+    transform: translateX(100vw) translateY(0);
+  }
+}
+
+  .duck {
     width: 100px;
     height: 70px;
     z-index: 10;
@@ -72,7 +113,7 @@
     position: absolute;
     left: 0;
     margin: 2px;
-  
+    animation: moveDuck 4.5s linear infinite;
   }
   
   .carrot { /* carrot target */
@@ -85,6 +126,7 @@
     position: absolute;
     left: 0;
     margin: 2px;
+    animation: moveDuck 6.5s linear infinite;
   
   }
   
@@ -98,67 +140,90 @@
     position: absolute;
     left: 0;
     margin: 2px;
+    animation: moveDuck 3.5s linear infinite;
   }
   
-  .instructions { /* Instuctions div */
-    height: 60%;
-    width: 65%;
-    background: rgb(0, 175, 185);
-    padding: 40px;
-    display: none;
-    justify-content: space-evenly;
-    text-align: center;
-    color: black;
-    border-radius: 5%;
-    position: absolute;
-    border: black solid 3px;
-  }
-  
-  .instructions p { /* Instructions text */
-    color:  black;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
 
-  .instructions h2 { /* Instructions text */
-    color: black;
-    font-size: 34px;
-    margin-bottom: 30px;
-  }
 
-  .instructions button{
-    width: 180px;
-    height: 60px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 30px;
-  }
+.instructions {
+  height: 60%;
+  width: 65%;
+  background: rgb(0, 175, 185);
+  padding: 40px;
+  justify-content: space-evenly;
+  text-align: center;
+  color: black;
+  border-radius: 5%;
+  position: absolute;
+  border: black solid 3px;
+}
 
-  .gameover { /* Game over display div */
-    height: 60%;
-    width: 60%;
-    background: rgb(0, 175, 185);
-    padding: 10px;
-    display: none;
-    text-align: center;
-    color: black;
-    border-radius: 5%;
-    position: absolute;
-    border: black solid 3px;
-    opacity: 0.8;
-  }
-  
-  .gameover h2 { /* Game over text styling */
-    color: black;
-    font-size: 34px;
-  }
-  
-  .gameover button{ /* restart button */
-    width: 180px;
-    height: 60px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 30px;
-  }
+.instructions p {
+  color:  black;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.instructions h2 {
+  color: black;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.instructions button{
+  width: 180px;
+  height: 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.gameover { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60%;
+  width: 60%;
+  background: rgb(0, 175, 185);
+  padding: 10px;
+  text-align: center;
+  color: black;
+  border-radius: 5%;
+  position: absolute;
+  border: black solid 3px;
+  opacity: 0.8;
+}
+
+.scoreSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.gameover h2 {
+  color: black;
+  font-size: 40px;
+}
+
+.gameover h3 {
+  color: black;
+  font-size: 28px;
+}
+
+.gameover p {
+  color: black;
+  font-size: 24px;
+}
+
+.gameover button{
+  width: 180px;
+  height: 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+}
+

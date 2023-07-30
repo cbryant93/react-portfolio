@@ -6,7 +6,6 @@ import Section from "./components/Section"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
-import Game from "./components/Game"
 
 
 const API_PATH = 'http://localhost:1992/react-contact-form/api/contact/index.php';
@@ -19,7 +18,6 @@ function App() {
       <Section/>
       <Skills/>
       <Projects/>
-      <Game/>
       <Contact/>
     </div>
   );
