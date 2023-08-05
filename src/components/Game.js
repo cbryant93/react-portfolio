@@ -267,8 +267,8 @@ function Game() {
             </div>
           ) : (
               <div className='startButtons'>
-                <button className="btn" id="startButton" onClick={handleStartButtonClick}>Start</button>
-                <button className="btn" id="how" type="button" name="button" onClick={handleInstructionsClick}>
+                <button className="btn startButton" onClick={handleStartButtonClick}>Start</button>
+                <button className="btn howToPlayButton" type="button" name="button" onClick={handleInstructionsClick}>
                   How to play?
                 </button>
               </div>

@@ -3,10 +3,12 @@ import '../styles/Game.scss';
 
 const GAME_HEIGHT = 800; // Height of the game container
 const MEAT_SIZE = 70; // Height of the meat
+const SPAWN_HEIGHT_PERCENTAGE = 25;
 
 const Meat = ({ index, onShoot, onNoShoot }) => {
   const meatRef = useRef(null);
-  const [top, setTop] = useState(Math.floor(Math.random() * (GAME_HEIGHT - MEAT_SIZE)));
+  const maxTop = GAME_HEIGHT - (GAME_HEIGHT * SPAWN_HEIGHT_PERCENTAGE) / 100 - MEAT_SIZE;
+  const [top, setTop] = useState(Math.floor(Math.random() * maxTop));
   const [meatYDir, setMeatYDir] = useState(true);
   const [meatYPx, setMeatYPx] = useState(0);
 
@@ -18,11 +20,11 @@ const Meat = ({ index, onShoot, onNoShoot }) => {
     }, 7);
 
     const controlMeatYMovement = setInterval(() => {
-      if (top + meatYPx < 0) { // If the meat would move off the top of the screen
-        setMeatYDir(false); // Force the meat to move down
+      if (top + meatYPx < 0) {
+        setMeatYDir(false);
         setMeatYPx((prev) => prev + 1.7);
-      } else if (top + meatYPx > GAME_HEIGHT - MEAT_SIZE) { // If the meat would move off the bottom of the screen
-        setMeatYDir(true); // Force the meat to move up
+      } else if (top + meatYPx > GAME_HEIGHT - MEAT_SIZE) {
+        setMeatYDir(true);
         setMeatYPx((prev) => prev - 1);
       } else if (meatYDir) {
         setMeatYDir(!meatYDir);

@@ -1,12 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Game.scss';
 
 const GAME_HEIGHT = 800; // Height of the game container
 const DUCK_SIZE = 60; // Width and height of the duck
+const SPAWN_HEIGHT_PERCENTAGE = 25;
 
 function Duck({ index, onShoot, onNoShoot }) {
   const duckRef = useRef(null);
-  const [top, setTop] = useState(Math.floor(Math.random() * (GAME_HEIGHT - DUCK_SIZE)));
+  const maxTop = GAME_HEIGHT - (GAME_HEIGHT * SPAWN_HEIGHT_PERCENTAGE) / 100 - DUCK_SIZE;
+  const [top, setTop] = useState(Math.floor(Math.random() * maxTop));
   const [duckYDir, setDuckYDir] = useState(true);
   const [duckYPx, setDuckYPx] = useState(0);
 
@@ -18,20 +20,20 @@ function Duck({ index, onShoot, onNoShoot }) {
     }, 10);
 
     const controlDuckYMovement = setInterval(() => {
-      if (top + duckYPx < 0) { // If the duck would move off the top of the screen
-        setDuckYDir(false); // Force the duck to move down
-        setDuckYPx((prev) => prev + 1.7);
-      } else if (top + duckYPx > GAME_HEIGHT - DUCK_SIZE) { // If the duck would move off the bottom of the screen
-        setDuckYDir(true); // Force the duck to move up
+      if (top + duckYPx < 0) {
+        setDuckYDir(false);
+        setDuckYPx((prev) => prev + 2.7);
+      } else if (top + duckYPx > GAME_HEIGHT - DUCK_SIZE) {
+        setDuckYDir(true);
         setDuckYPx((prev) => prev - 1);
       } else if (duckYDir) {
         setDuckYDir(!duckYDir);
         setDuckYPx((prev) => prev - 1);
       } else {
         setDuckYDir(!duckYDir);
-        setDuckYPx((prev) => prev + 1.7);
+        setDuckYPx((prev) => prev + 2.7);
       }
-    }, 1000);
+    }, 2000);
 
     return () => {
       clearInterval(moveDuck);
@@ -39,12 +41,9 @@ function Duck({ index, onShoot, onNoShoot }) {
     };
   }, [duckYDir, duckYPx, top]);
 
-  // Function to handle duck shot
   const handleDuckShot = () => {
     if (duckRef.current) {
-      // Remove the duck from the screen by hiding it
       duckRef.current.style.display = 'none';
-      // Call the onShoot function to notify the Game component that the duck was shot
       onShoot();
     }
   };
@@ -54,7 +53,7 @@ function Duck({ index, onShoot, onNoShoot }) {
       ref={duckRef}
       className="duck"
       style={{ top: `${top + duckYPx}px`, animationDelay: `${index * 0.5}s` }}
-      onMouseDown={handleDuckShot} // Call the handleDuckShot function when the duck is clicked
+      onMouseDown={handleDuckShot}
       onMouseUp={onNoShoot}
     ></div>
   );

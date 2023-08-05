@@ -3,10 +3,12 @@ import '../styles/Game.scss';
 
 const GAME_HEIGHT = 800; // Height of the game container
 const CARROT_SIZE = 70; // Height of the carrot
+const SPAWN_HEIGHT_PERCENTAGE = 25;
 
 function Carrot({ index, onShoot, onNoShoot }) {
   const carrotRef = useRef(null);
-  const [top, setTop] = useState(Math.floor(Math.random() * (GAME_HEIGHT - CARROT_SIZE)));
+  const maxTop = GAME_HEIGHT - (GAME_HEIGHT * SPAWN_HEIGHT_PERCENTAGE) / 100 - CARROT_SIZE;
+  const [top, setTop] = useState(Math.floor(Math.random() * maxTop));
   const [carrotYDir, setCarrotYDir] = useState(true);
   const [carrotYPx, setCarrotYPx] = useState(0);
 
@@ -18,11 +20,11 @@ function Carrot({ index, onShoot, onNoShoot }) {
     }, 7);
 
     const controlCarrotYMovement = setInterval(() => {
-      if (top + carrotYPx < 0) { // If the carrot would move off the top of the screen
-        setCarrotYDir(false); // Force the carrot to move down
+      if (top + carrotYPx < 0) {
+        setCarrotYDir(false);
         setCarrotYPx((prev) => prev + 1.7);
-      } else if (top + carrotYPx > GAME_HEIGHT - CARROT_SIZE) { // If the carrot would move off the bottom of the screen
-        setCarrotYDir(true); // Force the carrot to move up
+      } else if (top + carrotYPx > GAME_HEIGHT - CARROT_SIZE) {
+        setCarrotYDir(true);
         setCarrotYPx((prev) => prev - 1);
       } else if (carrotYDir) {
         setCarrotYDir(!carrotYDir);
