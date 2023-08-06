@@ -3,7 +3,7 @@
     background: rgb(224, 245, 243);
     overflow: hidden;
     transition: height 0.3s ease;
-    height: auto;
+    height: 100vh;
   }
   
   .section__container {
@@ -47,6 +47,11 @@
   }
   
   @media (max-width: 735px) {
+
+    .sections {
+        height: auto;
+      }
+
     .sections.collapsed {
       height: 375px; // Adjust this value to fit the "About Me" title
     }
