@@ -24,7 +24,7 @@ function Popup({ onClose, content }) {
     <div className="popup">
       <div className="popup-content">
         {typeof content === 'string' ? <p>{content}</p> : content}
-        <button onClick={onClose}>X</button>
+        <button className="close-button" onClick={onClose}>X</button>
       </div>
     </div>
   );

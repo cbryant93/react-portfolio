@@ -63,19 +63,24 @@
   width: 80%; /* take the full width */
   height: 90%; /* take the full height */
   overflow: scroll; /* Enable scrolling when the content overflows */
+  position: relative; /* Add relative positioning */
   p {
     margin-bottom: 20px;
   }
 
-  button {
+  .close-button {
     background-color: rgb(240, 113, 103);
     color: #fff;
     border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: 0; /* Remove padding */
+    width: 40px; /* Set the width to create a square button */
+    height: 40px; /* Set the height to create a square button */
+    border-radius: 5px; /* Adjust the border-radius if needed */
     cursor: pointer;
-    width: 10%;
-    margin-top: 20px;
+    /* Adjust the positioning */
+    position: absolute;
+    top: 50px;
+    right: 40px;
 
     &:hover {
       background-color: #444;

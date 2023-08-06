@@ -62,7 +62,7 @@ function Game() {
       <Duck key={newDuckId} id={newDuckId} onShoot={() => shootDuck(newDuckId)} onNoShoot={() => noShootDuck()} />,
     ]);
   };
-  
+
   const createCarrot = () => {
     const newCarrotId = Math.random();
     setCarrots((prevCarrots) => [
@@ -154,14 +154,14 @@ function Game() {
     setMissClick(true);
     Miss();
   }
-    
+
   function Miss() {
-    if(gameStarted && backgroundClicked){
-      setVeganScore((prevScore) => prevScore + 1); 
+    if (gameStarted && backgroundClicked) {
+      setVeganScore((prevScore) => prevScore + 1);
       setCarnivoreScore((prevScore) => prevScore - 1); //Decrements main score when duck missed  
-    }  
+    }
   }
-   
+
   const shootDuck = (duckId) => {
     if (!duckClicked) {
       setCarnivoreScore((prevScore) => prevScore + 1); // Increment score by one when duck is shot
@@ -175,7 +175,7 @@ function Game() {
       setDucks((prevDucks) => prevDucks.filter((duck) => duck.key !== duckId.toString()));
     }
   }
-  
+
   function noShootDuck(event) {
     setDuckClicked(false);
   }
@@ -195,7 +195,7 @@ function Game() {
   function noShootMeat(event) {
     setMeatClicked(false);
   }
-  
+
   const shootCarrot = (carrotId) => {
     if (!carrotClicked) {
       setVeganScore((prevScore) => prevScore + 3); // Increment score by 3 when carrot is shot
@@ -207,94 +207,94 @@ function Game() {
       setCarrots((prevCarrots) => prevCarrots.filter((carrot) => carrot.key !== carrotId.toString()));
     }
   }
-  
+
   function noShootCarrot(event) {
     setCarrotClicked(false);
   }
-  
-  
+
+
   return (
     <div className='gameSection'>
-    <div className='background'>
-      <div className="Title">
-        <h1>Vegan Duck Hunt</h1>
-      </div>
-      
-      <div className='gameStats'>
-        <div className="cScore">
-          <h3>Carnivore Score</h3>
-          <p id="points">{carnivoreScore}</p>
+      <div className='background'>
+        <div className="Title">
+          <h1>Vegan Duck Hunt</h1>
         </div>
-  
-        <div className="timer">
-          <h3>Timer: </h3>
-          <p id="timer">{seconds}</p>
-        </div>
-  
-        <div className="vScore">
-          <h3>Vegan Score</h3>
-          <p id="missed">{veganScore}</p>
-        </div>
-      </div>
-  
-      <div className="container" onClick={handleMissClick}>
-        {gameStarted && !showGameOver ? (
-          <div>
-            {/* Game content goes here */}
-            {ducks}
-            {carrots}
-            {meats}
+
+        <div className='gameStats'>
+          <div className="cScore">
+            <h3>Carnivore Score</h3>
+            <p id="points">{carnivoreScore}</p>
           </div>
-        ) : (
-          <div className='gameButtons'>
-          {showGameOver ? (
-            <div className="gameover" id="restart">
-              <h2>GAME OVER!</h2>
-              <div className="scoreSection">
-                <div>
-                  <h3>Carnivore Score</h3>
-                  <p id="points">{carnivoreScore}</p>
-                </div>
-                <div>
-                  <h3>Vegan Score</h3>
-                  <p id="missed">{veganScore}</p>
-                </div>
-              </div>
-              <p id="endMessage">
-                {carnivoreScore > veganScore ? "You blood thirsty animal!" : veganScore > carnivoreScore ? "We get it, you're a Vegan!" : "Its a draw! You obviously have dreams of a peaceful world!"}
-              </p>
-              <button id="bRestart" className="btn" type="button" name="button" onClick={handleRestartClick}>Restart</button>
+
+          <div className="timer">
+            <h3>Timer: </h3>
+            <p id="timer">{seconds}</p>
+          </div>
+
+          <div className="vScore">
+            <h3>Vegan Score</h3>
+            <p id="missed">{veganScore}</p>
+          </div>
+        </div>
+
+        <div className="container" onClick={handleMissClick}>
+          {gameStarted && !showGameOver ? (
+            <div>
+              {/* Game content goes here */}
+              {ducks}
+              {carrots}
+              {meats}
             </div>
           ) : (
-              <div className='startButtons'>
-                <button className="btn startButton" onClick={handleStartButtonClick}>Start</button>
-                <button className="btn howToPlayButton" type="button" name="button" onClick={handleInstructionsClick}>
-                  How to play?
-                </button>
-              </div>
-            )}
-          </div>
-        )}
-  
-        {showInstructions && (
-          <div className="instructions" id="instruct">
-            {/* Instruction content... */}
-            <h2>How to play?</h2>
-            <p>Do you believe meat is murder?</p>
-            <p>Are you fed up of vegans pushing their agenda on you?</p>
-            <p>Then this is the game for you!</p>
-            <p>The goal is simple: shoot as many vegan protesters as possible.</p>
-            <p>Use the arrow keys to move and the space bar to shoot.</p>
-            <p>But be careful not to hit any innocent bystanders!</p>
-            <button className="btn" id="back" type="button" name="button" onClick={handleBackClick}>Back</button>
-          </div>
-        )}
-      </div>
+            <div className='gameButtons'>
+              {showGameOver ? (
+                <div className="gameover" id="restart">
+                  <h2>GAME OVER!</h2>
+                  <div className="scoreSection">
+                    <div>
+                      <h3>Carnivore Score</h3>
+                      <p id="points">{carnivoreScore}</p>
+                    </div>
+                    <div>
+                      <h3>Vegan Score</h3>
+                      <p id="missed">{veganScore}</p>
+                    </div>
+                  </div>
+                  <p id="endMessage">
+                    {carnivoreScore > veganScore ? "You blood thirsty animal!" : veganScore > carnivoreScore ? "We get it, you're a Vegan!" : "Its a draw! You obviously have dreams of a peaceful world!"}
+                  </p>
+                  <button id="bRestart" className="btn" type="button" name="button" onClick={handleRestartClick}>Restart</button>
+                </div>
+              ) : (
+                <div className='startButtons'>
+                  <button className="btn gameButton" onClick={handleStartButtonClick}>Start</button>
+                  <button className="btn gameButton" type="button" name="button" onClick={handleInstructionsClick}>
+                    How to play?
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
+          {showInstructions && (
+            <div className="instructions" id="instruct">
+              {/* Instruction content... */}
+              <h2>How to play?</h2>
+              <p>Do you believe meat is murder?</p>
+              <p>Are you fed up of vegans pushing their agenda on you?</p>
+              <p>Then this is the game for you!</p>
+              <p>The goal is simple: shoot as many vegan protesters as possible.</p>
+              <p>Use the arrow keys to move and the space bar to shoot.</p>
+              <p>But be careful not to hit any innocent bystanders!</p>
+              <button className="btn" id="back" type="button" name="button" onClick={handleBackClick}>Back</button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
-  
-            } 
-              
 
-  export default Game;
+}
+
+
+export default Game;

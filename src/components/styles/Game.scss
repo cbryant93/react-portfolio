@@ -14,7 +14,6 @@
   background-size: cover; /* this will scale the image to cover the entire .background area */
 }
 
-
 .Title {
   color: yellow;
   font-size: 40px;
@@ -22,21 +21,19 @@
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url(../assets/game/background.png);
   background-size: cover;
   width: 80%;
   height: 77vh;
   border: 5px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: auto;
   overflow: hidden; /* change from visible to hidden */
   position: relative;
   cursor: url('../assets/game/aim.png'), pointer;
 }
-
-
 
 .gameStats {
   display: flex;
@@ -67,7 +64,13 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  
 
+
+  .btn {
+    width: 100% !important; /* Adjust as necessary */
+    margin: 10px 0; /* Gives 10px vertical space between buttons */
+  }
 }
 
 .startButtons {
@@ -77,13 +80,8 @@
   align-items: center;
   gap: 5px;
   text-align: center;
-
-  .btn {
-    width: 100% !important; /* Adjust as necessary */
-    margin: 10px 0; /* Gives 10px vertical space between buttons */
-  }
+  
 }
-
 
 @keyframes moveDuck {
   0% {
@@ -103,51 +101,50 @@
   }
 }
 
-  .duck {
-    width: 100px;
-    height: 70px;
-    z-index: 10;
-    background: url('../assets/game/duck.png');
-    background-position: center;
-    background-size: contain;
-    position: absolute;
-    left: 0;
-    margin: 2px;
-    animation: moveDuck 4.5s linear infinite;
-  }
-  
-  .carrot { /* carrot target */
-    width: 70px;
-    height: 70px;
-    z-index: 10;
-    background: url('../assets/game/carrot.png');
-    background-position: center;
-    background-size: contain;
-    position: absolute;
-    left: 0;
-    margin: 2px;
-    animation: moveDuck 6.5s linear infinite;
-  
-  }
-  
-  .meat { /* meat target */
-    width: 70px;
-    height: 70px;
-    z-index: 10;
-    background: url('../assets/game/meat.png');
-    background-position: center;
-    background-size: contain;
-    position: absolute;
-    left: 0;
-    margin: 2px;
-    animation: moveDuck 3.5s linear infinite;
-  }
-  
+.duck {
+  width: 100px;
+  height: 70px;
+  z-index: 10;
+  background: url('../assets/game/duck.png');
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  margin: 2px;
+  animation: moveDuck 4.5s linear infinite;
+}
 
+.carrot {
+  /* carrot target */
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  background: url('../assets/game/carrot.png');
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  margin: 2px;
+  animation: moveDuck 6.5s linear infinite;
+}
+
+.meat {
+  /* meat target */
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+  background: url('../assets/game/meat.png');
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  margin: 2px;
+  animation: moveDuck 3.5s linear infinite;
+}
 
 .instructions {
-  height: 60%;
-  width: 65%;
+  height: 65%;
+  width: 75%;
   background: rgb(0, 175, 185);
   padding: 40px;
   justify-content: space-evenly;
@@ -159,18 +156,18 @@
 }
 
 .instructions p {
-  color:  black;
-  font-size: 20px;
+  color: black;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .instructions h2 {
   color: black;
-  font-size: 34px;
+  font-size: 22px;
   margin-bottom: 30px;
 }
 
-.instructions button{
+.instructions button {
   width: 180px;
   height: 60px;
   border-radius: 10px;
@@ -179,7 +176,7 @@
   margin-top: 30px;
 }
 
-.gameover { 
+.gameover {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -218,7 +215,7 @@
   font-size: 24px;
 }
 
-.gameover button{
+.gameover button {
   width: 180px;
   height: 60px;
   border-radius: 10px;
@@ -226,4 +223,3 @@
   font-size: 20px;
   margin-top: 30px;
 }
-
