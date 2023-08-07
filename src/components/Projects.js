@@ -1,5 +1,5 @@
 import './styles/Projects.scss';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Game from './Game'; // Add this line if the game component is exported from the file 'Game.js'
 
 function Box({ label, color, onClick, visible }) {
@@ -33,6 +33,20 @@ function Popup({ onClose, content }) {
 function Projects() {
   const [popups, setPopups] = useState([]);
   const [visible, setVisible] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const projectsRef = useRef(null); 
+
+  const toggleSection = () => {
+    setIsOpen(!isOpen);
+
+    if (!isOpen) { // If the section was closed
+      setTimeout(() => { // Wait for the transition to complete
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
+      }, 100); // 300ms is the duration of your transition
+    }
+  };
+
 
   const handleClick = (content) => {
     setPopups([...popups, content]);
@@ -45,11 +59,14 @@ function Projects() {
   };
 
   return (
-    <div className="projects" id='Projects'>
+      <div ref={projectsRef} className={`projects ${isOpen ? '' : 'collapsed'}`} id="Projects">
+        <h1 onClick={toggleSection}>Projects</h1>
       {popups.map((content, index) => (
         <Popup key={index} content={content} onClose={() => handleClose(index)} />
       ))}
       <div className="box-container">
+        
+      
         <Box
           label="Web Dev Project"
           color="#0081a7"

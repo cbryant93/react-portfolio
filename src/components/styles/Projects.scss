@@ -1,9 +1,20 @@
-.projects{
-    width: 100%;
-    min-height: 100vh;
-    margin: 0 auto;
-    background-color:rgb(255, 255, 255);
-    padding: 2rem;
+.projects {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  text-align: center; // Center the text inside .projects
+  
+  h1 {
+    color: rgb(40, 175, 185);
+    text-transform: uppercase;
+    font-size: 55px;
+    margin-bottom: 2.125rem;
+    cursor: pointer;
+  }
 }
 
 .box-container {
@@ -16,6 +27,7 @@
   padding: 40px;
   box-sizing: border-box;
   background-color: rgb(253, 252, 220);
+
 }
 
 .box-container .box {
@@ -35,8 +47,7 @@
 .box-container .box:hover {
   transform: scale(1.1);
 }
-  
-  
+
 .popup {
   overflow: auto;
   position: fixed;
@@ -60,30 +71,46 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 80%; /* take the full width */
-  height: 90%; /* take the full height */
-  overflow: scroll; /* Enable scrolling when the content overflows */
-  position: relative; /* Add relative positioning */
+  width: 80%;
+  height: 90%;
+  overflow: scroll;
+  position: relative;
+  
   p {
-    margin-bottom: 20px;
+      margin-bottom: 20px;
   }
 
   .close-button {
-    background-color: rgb(240, 113, 103);
-    color: #fff;
-    border: none;
-    padding: 0; /* Remove padding */
-    width: 40px; /* Set the width to create a square button */
-    height: 40px; /* Set the height to create a square button */
-    border-radius: 5px; /* Adjust the border-radius if needed */
-    cursor: pointer;
-    /* Adjust the positioning */
-    position: absolute;
-    top: 50px;
-    right: 40px;
+      background-color: rgb(240, 113, 103);
+      color: #fff;
+      border: none;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 50px;
+      right: 40px;
 
-    &:hover {
-      background-color: #444;
-    }
+      &:hover {
+          background-color: #444;
+      }
+  }
+}
+
+@media (max-width: 735px) {
+  .projects {
+      height: auto;   
+      min-height: unset; // Override the min-height
+      transition: height 0.3s ease; // Add a transition for smooth collapsing
+  }
+
+  .projects.collapsed {
+      height: 125px; // Adjust this value to fit the "Projects" title
+  }
+
+  .projects.collapsed .box-container {
+      display: none; // Hide the content
   }
 }

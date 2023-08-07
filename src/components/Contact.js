@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./styles/Contact.scss";
 
 function Contact() {
   const [messageSent, setMessageSent] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const projectsRef = useRef(null); 
+
+  const toggleSection = () => {
+    setIsOpen(!isOpen);
+
+    if (!isOpen) { // If the section was closed
+      setTimeout(() => { // Wait for the transition to complete
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
+      }, 100); // 300ms is the duration of your transition
+    }
+  };
 
   function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission behavior
@@ -32,9 +45,10 @@ function Contact() {
   }
 
   return (
-    <div className="contact" id="Contact">
+      <div ref={projectsRef} className={`contact ${isOpen ? '' : 'collapsed'}`} id="Contact">
+        <h1 onClick={toggleSection}>CONTACT ME</h1>
       <div className="inputs">
-        <h1>CONTACT ME</h1>
+        
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="name">Your Name</label>
           <input

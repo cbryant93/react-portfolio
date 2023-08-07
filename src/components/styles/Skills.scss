@@ -3,7 +3,7 @@
     min-height: 100vh;
     background: rgb(254, 217, 183);
     overflow: hidden;
-
+    transition: height 0.3s ease;
 }
 
 .skill__container {
@@ -11,15 +11,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 2.5rem;
-
 }
 
 .skill__content {
-
     margin: 0 auto;
     line-height: 70px;
     text-align: center;
-
 
     h1 {
         color: rgb(0, 129, 167);
@@ -37,6 +34,35 @@
         padding: 6px;
         margin-block: 7px;
         background-color: white;
-        ;
     }
+}
+
+
+@media (max-width: 735px) {
+    .skills {
+        height: auto;
+        min-height: unset; // Override the min-height
+        transition: height 0.3s ease; // Add a transition for smooth collapsing
+    }
+
+    .skills.collapsed {
+        height: 125px; // Adjust this value to fit the "Skills" title
+        overflow: hidden; // Hide overflow content
+    }
+
+    .skills.collapsed .skill__content p {
+        display: none; // Hide the content
+    }
+
+    .skills.collapsed {
+        height: 125px; // Adjust this value to fit the "Skills" title
+        overflow: hidden; // Hide overflow content
+    }
+
+    .skill__container {
+        flex-direction: column;
+        margin: 1.5rem;
+    }
+    
+    // rest of your styles for the mobile view
 }

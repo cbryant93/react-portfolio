@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import './styles/Section.scss';
 import chris from './assets/me2.JPG';
 
 const Section = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const projectsRef = useRef(null); 
+
     const toggleSection = () => {
-        setIsOpen(!isOpen);
+      setIsOpen(!isOpen);
+  
+      if (!isOpen) { // If the section was closed
+        setTimeout(() => { // Wait for the transition to complete
+          projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
+        }, 100); // 300ms is the duration of your transition
+      }
     };
 
     return (
-        <div className={`sections ${isOpen ? '' : 'collapsed'}`} id="About">
+        <div ref={projectsRef} className={`sections ${isOpen ? '' : 'collapsed'}`} id="About">
             <div className="section__container">
                 <div className="section__img">
                     <img src={chris} alt="" />
