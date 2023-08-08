@@ -1,6 +1,8 @@
 import './styles/Projects.scss';
-import React, { useState, useRef } from 'react';
-import Game from './Game'; // Add this line if the game component is exported from the file 'Game.js'
+import React, { useRef, useState, useEffect } from 'react';  // Don't forget to import 'useState' and 'useEffect'
+import Game from './Game';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Box({ label, color, onClick, visible }) {
   return (
@@ -18,7 +20,6 @@ function Box({ label, color, onClick, visible }) {
   );
 }
 
-// Change the Popup to accept a content parameter instead of message
 function Popup({ onClose, content }) {
   return (
     <div className="popup">
@@ -30,23 +31,40 @@ function Popup({ onClose, content }) {
   );
 }
 
-function Projects() {
+function Projects({ isOpen, onToggle }) {
   const [popups, setPopups] = useState([]);
   const [visible, setVisible] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const projectsRef = useRef(null); 
+  const projectsRef = useRef(null);
+  const boxContainerRef = useRef(null);
+
+const handleNext = () => {
+  if (boxContainerRef.current) {
+    boxContainerRef.current.scrollBy({ left: boxContainerRef.current.offsetWidth, behavior: 'smooth' });
+  }
+};
+
+const handlePrev = () => {
+  if (boxContainerRef.current) {
+    boxContainerRef.current.scrollBy({ left: -boxContainerRef.current.offsetWidth, behavior: 'smooth' });
+  }
+};
+
 
   const toggleSection = () => {
-    setIsOpen(!isOpen);
+    onToggle();
 
-    if (!isOpen) { // If the section was closed
-      setTimeout(() => { // Wait for the transition to complete
-        projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
-      }, 100); // 300ms is the duration of your transition
+    if (!isOpen) {
+      setTimeout(() => {
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
     }
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [isOpen]);
 
   const handleClick = (content) => {
     setPopups([...popups, content]);
@@ -59,38 +77,47 @@ function Projects() {
   };
 
   return (
-      <div ref={projectsRef} className={`projects ${isOpen ? '' : 'collapsed'}`} id="Projects">
-        <h1 onClick={toggleSection}>Projects</h1>
+    <div ref={projectsRef} className={`projects ${isOpen ? '' : 'collapsed'}`} id="Projects">
+      <h1 onClick={toggleSection}>Projects</h1>
       {popups.map((content, index) => (
         <Popup key={index} content={content} onClose={() => handleClose(index)} />
       ))}
-      <div className="box-container">
-        
-      
-        <Box
-          label="Web Dev Project"
-          color="#0081a7"
-          onClick={() => handleClick('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
-          visible={visible}
-        />
-        <Box
-          label="Vegan Duck Hunt"
-          color="#00afb9"
-          onClick={() => handleClick(<Game />)} // Set the content to be the Game component when this box is clicked
-          visible={visible}
-        />
-        <Box
-          label="Project 3"
-          color="#fed9b7"
-          onClick={() => handleClick('Popup message 3')}
-          visible={visible}
-        />
-        <Box
-          label="Project 4"
-          color="#f07167"
-          onClick={() => handleClick('Popup message 4')}
-          visible={visible}
-        />
+      <div className={`box-wrapper ${isOpen ? 'buttons-visible' : ''}`}>
+        <div ref={boxContainerRef} className="box-container">
+          <Box
+            label="Web Dev Project"
+            color="#0081a7"
+            onClick={() => handleClick('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
+            visible={visible}
+          />
+          <Box
+            label="Vegan Duck Hunt"
+            color="#00afb9"
+            onClick={() => handleClick(<Game />)}
+            visible={visible}
+          />
+          <Box
+            label="Project 3"
+            color="#fed9b7"
+            onClick={() => handleClick('Popup message 3')}
+            visible={visible}
+          />
+          <Box
+            label="Project 4"
+            color="#f07167"
+            onClick={() => handleClick('Popup message 4')}
+            visible={visible}
+          />
+
+
+        </div>
+        <button className="prev-button" onClick={handlePrev}>
+          <ArrowBackIcon />
+        </button>
+
+        <button className="next-button" onClick={handleNext}>
+          <ArrowForwardIcon />
+        </button>
       </div>
     </div>
   );

@@ -1,22 +1,26 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react"; // Don't forget to import 'useEffect'
 import "./styles/Contact.scss";
 
-function Contact() {
+function Contact({ isOpen, onToggle }) {
   const [messageSent, setMessageSent] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const projectsRef = useRef(null); 
+  const contactRef = useRef(null);
 
   const toggleSection = () => {
-    setIsOpen(!isOpen);
+    onToggle();
 
     if (!isOpen) { // If the section was closed
       setTimeout(() => { // Wait for the transition to complete
-        projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
-      }, 100); // 300ms is the duration of your transition
+        contactRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
+      }, 300); // 300ms is the duration of your transition
     }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [isOpen]);
 
   function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission behavior
@@ -45,10 +49,9 @@ function Contact() {
   }
 
   return (
-      <div ref={projectsRef} className={`contact ${isOpen ? '' : 'collapsed'}`} id="Contact">
-        <h1 onClick={toggleSection}>CONTACT ME</h1>
+    <div ref={contactRef} className={`contact ${isOpen ? '' : 'collapsed'}`} id="Contact">
+      <h1 onClick={toggleSection}>CONTACT ME</h1>
       <div className="inputs">
-        
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="name">Your Name</label>
           <input
