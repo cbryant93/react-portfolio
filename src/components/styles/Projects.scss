@@ -7,7 +7,7 @@
   overflow: hidden;
   text-align: center;
 
-  h1 {
+  .project-title {
     color: rgb(40, 175, 185);
     text-transform: uppercase;
     font-size: 55px;
@@ -80,7 +80,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
   height: 90%;
   overflow: scroll;
   position: relative;
@@ -141,36 +141,40 @@
     -webkit-overflow-scrolling: touch; // Enable momentum scrolling on iOS
     position: relative;
     margin-bottom: 70px;
-    width: 100%;
+    width: 105%;
     
 
 
     
     .box {
-      flex: 0 0 calc(100% - 40px); // Set the flex-basis to occupy full width
       scroll-snap-align: start; // Snap each box to the left edge of the container
       margin-right: 20px;
-      width: calc(100% - 40px);
-      height: 250px;
+      flex: 0 0 calc(100%); /* Same as the new width above */
+      height: 300px; /* Same as the new height above */
     }
   }
 
   .prev-button, .next-button {
-    display: none;
     position: absolute; /* Position relative to .box-wrapper */
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: none;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.7); /* change to a darker background */
-    bottom: 20px; /* adjust vertical position */
-    top: 80%; /* center vertically */
+    top: 85%; /* center vertically */
     transform: translateY(-50%);
+    display: flex;        /* Flexbox layout */
+    align-items: center;  /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 30px; /* Match the button's height */
+    line-height: 30px; /* Same as the button's height */
+    text-align: center; /* Horizontally center the text */
+    padding: 0;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.9);
     }
   }
+
 
   .prev-button {
     left: calc(50% - 80px);
@@ -188,6 +192,27 @@
   .popup {
     /* ... other styles ... */
     z-index: 1000; /* set a high z-index to make sure the popup appears above other elements */
+  }
+
+  .popup-content {
+    width: 95%;
+    height: 90%;
+    overflow: hidden; 
+    padding: 1;
+    
+    p {
+        margin-bottom: 20px;
+    }
+  
+    .close-button {
+    top: 10px;
+    right: 10px;
+  
+        &:hover {
+            background-color: #444;
+        }
+    }
+  
   }
 }
 

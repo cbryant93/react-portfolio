@@ -216,7 +216,7 @@ function Game() {
   return (
     <div className='gameSection'>
       <div className='background'>
-        <div className="Title">
+        <div className='game-title'>
           <h1>Vegan Duck Hunt</h1>
         </div>
 
