@@ -97,21 +97,27 @@
   }
   100% {
     transform: translateX(100vw) translateY(0);
+    
   }
 }
 
 .duck {
-  width: 100px;
-  height: 70px;
+  width: 110px;
+  height: 80px;
   z-index: 10;
   background: url('../assets/game/duck.png');
   background-position: center;
   background-size: contain;
   position: absolute;
   left: 0;
-  margin: 2px;
+  // margin: 2px;
   animation: moveDuck 4.5s linear infinite;
+  animation-duration: 3s; /* Adjust this based on desired speed */
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
 }
+
 
 .carrot {
   /* carrot target */
@@ -125,6 +131,10 @@
   left: 0;
   margin: 2px;
   animation: moveDuck 6.5s linear infinite;
+  animation-duration: 5s; /* Adjust this based on desired speed */
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
 }
 
 .meat {
@@ -139,10 +149,14 @@
   left: 0;
   margin: 2px;
   animation: moveDuck 3.5s linear infinite;
+  animation-duration: 3s; /* Adjust this based on desired speed */
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
 }
 
 .instructions {
-  height: 65%;
+  height: 70%;
   width: 75%;
   background: rgb(0, 175, 185);
   padding: 40px;
@@ -225,6 +239,7 @@
 
 @media (max-width: 735px) {
 
+
   .gameSection > * {
     transform: scaleX(0.9) scaleY(0.8);
     padding: 0 5%; 
@@ -247,6 +262,12 @@
 
 .container {
   width: 100%;
+  cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
+  touch-action: manipulation;
+}
+
+.target {
+  cursor: pointer;
 }
 
 .gameStats {
@@ -256,7 +277,7 @@
   margin-right: auto;
   height: 10%;
   padding: 5px;
-  font-size: 18px;
+  font-size: 16px;
   align-items: center; /* It's already there, just ensuring */
   padding-top: 20px; 
 
@@ -279,8 +300,8 @@
   
   p {
 
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 button{
@@ -298,5 +319,38 @@ button{
   padding: 10px;
 
 }
+
+.duck {
+  animation: moveDuck 4.5s linear infinite;
+  animation-duration: 1.75s; /* Adjust this based on desired speed */
+
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
+
+  
+
+}
+
+.carrot {
+
+  z-index: 10;
+  animation: moveDuck 4.5s linear infinite;
+  animation-duration: 2s; /* Adjust this based on desired speed */
+
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
+}
+
+.meat {
+
+  z-index: 10;
+  animation: moveDuck 4.5s linear infinite;
+  animation-duration: 1.5s; /* Adjust this based on desired speed */
+
+  animation-fill-mode: forwards;
+  transition: top 1s ease-in-out;
+}
+
+
 
 }

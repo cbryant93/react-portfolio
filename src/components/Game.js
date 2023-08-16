@@ -3,7 +3,7 @@ import "./styles/Game.scss";
 import Duck from './DuckHunt/Duck.js';
 import Carrot from './DuckHunt/Carrot.js';
 import Meat from './DuckHunt/Meat.js';
-import musicSound from './assets/sounds/Mask_Off_8_Bit.mp3';
+import musicSound from './assets/sounds/funkDuck.mp3';
 import quakSound from './assets/sounds/quak.wav';
 import bangSound from './assets/sounds/gun-shot.wav';
 
@@ -58,26 +58,49 @@ function Game() {
   const createDuck = () => {
     const newDuckId = Math.random();
     setDucks((prevDucks) => [
-      ...prevDucks,
-      <Duck key={newDuckId} id={newDuckId} onShoot={() => shootDuck(newDuckId)} onNoShoot={() => noShootDuck()} />,
+        ...prevDucks,
+        <Duck key={newDuckId} id={newDuckId} onShoot={() => shootDuck(newDuckId)} onNoShoot={() => noShootDuck()} />,
     ]);
-  };
 
-  const createCarrot = () => {
-    const newCarrotId = Math.random();
-    setCarrots((prevCarrots) => [
+    // Define lifespan based on screen width
+    const duckLifespan = window.innerWidth <= 768 ? 3000 : 5000; // 3 seconds for mobile, 5 seconds for larger screens
+
+    setTimeout(() => {
+        setDucks((prevDucks) => prevDucks.filter((duck) => duck.key !== newDuckId.toString()));
+    }, duckLifespan);
+};
+const createCarrot = () => {
+  const newCarrotId = Math.random();
+  setCarrots((prevCarrots) => [
       ...prevCarrots,
       <Carrot key={newCarrotId} id={newCarrotId} onShoot={() => shootCarrot(newCarrotId)} onNoShoot={() => noShootCarrot()} />,
-    ]);
-  };
+  ]);
 
-  const createMeat = () => {
-    const newMeatId = Math.random();
-    setMeats((prevMeats) => [
+  // Define lifespan based on screen width
+  const carrotLifespan = window.innerWidth <= 768 ? 2000 : 4000; // 2 seconds for mobile, 4 seconds for larger screens
+
+  setTimeout(() => {
+      setCarrots((prevCarrots) => prevCarrots.filter((carrot) => carrot.key !== newCarrotId.toString()));
+  }, carrotLifespan);
+};
+
+  
+const createMeat = () => {
+  const newMeatId = Math.random();
+  setMeats((prevMeats) => [
       ...prevMeats,
       <Meat key={newMeatId} id={newMeatId} onShoot={() => shootMeat(newMeatId)} onNoShoot={() => noShootMeat()} />,
-    ]);
-  };
+  ]);
+
+  // Define lifespan based on screen width
+  const meatLifespan = window.innerWidth <= 768 ? 4000 : 6000; // 4 seconds for mobile, 6 seconds for larger screens
+
+  setTimeout(() => {
+      setMeats((prevMeats) => prevMeats.filter((meat) => meat.key !== newMeatId.toString()));
+  }, meatLifespan);
+};
+
+  
 
   useEffect(() => {
     const music = new Audio(musicSound);
@@ -118,7 +141,7 @@ function Game() {
     if (gameStarted && !showGameOver) {
       createDuckInterval = setInterval(() => {
         createDuck();
-      }, 1000); // Adjust the interval as needed
+      }, 2000); // Adjust the interval as needed
     }
     return () => {
       clearInterval(createDuckInterval);
@@ -130,7 +153,7 @@ function Game() {
     if (gameStarted && !showGameOver) {
       createCarrotInterval = setInterval(() => {
         createCarrot();
-      }, 800); // Adjust the interval as needed
+      }, 1000); // Adjust the interval as needed
     }
     return () => {
       clearInterval(createCarrotInterval);
