@@ -81,7 +81,7 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  height: 90%;
+  height: 95%;
   overflow: scroll;
   position: relative;
   
@@ -99,8 +99,8 @@
       border-radius: 5px;
       cursor: pointer;
       position: absolute;
-      top: 50px;
-      right: 40px;
+      top: 45px;
+      right: 35px;
 
       &:hover {
           background-color: #444;

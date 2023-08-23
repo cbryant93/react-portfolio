@@ -2,16 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 65vw;   /* Full viewport width */
+  height: 85vh;  /* Full viewport height */
   margin: 0; 
+  padding: 0;     /* Ensure no padding */
+  box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
+  margin-top: 18px;
 }
 
 .background {
-  width: 100vh;
+  width: 65vw;   /* Full viewport width */
+  height: 85vh;  /* Full viewport height */
   background-image: url(../assets/game/view2.jpg);
-  background-size: cover; /* this will scale the image to cover the entire .background area */
+  background-size: cover;
+  box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
 }
+
+
+
 
 .game-title h1 {
   color: yellow;
@@ -25,8 +33,8 @@
   align-items: center;
   background-image: url(../assets/game/background.png);
   background-size: cover;
-  width: 80%;
-  height: 77vh;
+  width: 75%;
+  height: 70vh;
   border: 5px solid black;
   margin: auto;
   overflow: hidden; /* change from visible to hidden */
@@ -38,7 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   height: 10%;
@@ -240,30 +248,34 @@
 @media (max-width: 735px) {
 
 
-  .gameSection > * {
-    transform: scaleX(0.9) scaleY(0.8);
-    padding: 0 5%; 
-    width: 110%;
-    height: 100%;
+  .gameSection{
+    margin-top: 90px;
+
+    width: 85vw;   /* Full viewport width */
+    height: 75vh;  /* Full viewport height */
 }
 
-.game-title  {
-  padding-bottom: 20px;
-
- h1 {
-  font-size: 38px;
-}
-}
 
 .background {
-  height: 110%;
-
+  width: 85vw;   /* Full viewport width */
+  height: 75vh;  /* Full viewport height */
 }
 
+
+.game-title  {
+  padding-bottom: 18px;
+
+ h1 {
+  font-size: 32px;
+}
+}
+
+
 .container {
-  width: 100%;
+  width: 90%;
   cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
   touch-action: manipulation;
+  height: 60vh;
 }
 
 .target {
@@ -272,7 +284,7 @@
 
 .gameStats {
 
-  width: 100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   height: 10%;
