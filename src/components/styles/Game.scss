@@ -2,20 +2,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65vw;   /* Full viewport width */
-  height: 85vh;  /* Full viewport height */
-  margin: 0; 
-  padding: 0;     /* Ensure no padding */
-  box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
+  width: 60vw;
+  /* Full viewport width */
+  height: 85vh;
+  /* Full viewport height */
+  margin: 0;
+  padding: 0;
+  /* Ensure no padding */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in the element's total width and height */
   margin-top: 18px;
+  margin-right: 60px;
 }
 
 .background {
-  width: 65vw;   /* Full viewport width */
-  height: 85vh;  /* Full viewport height */
+  width: 60vw;
+  /* Full viewport width */
+  height: 85vh;
+  /* Full viewport height */
   background-image: url(../assets/game/view2.jpg);
   background-size: cover;
-  box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in the element's total width and height */
 }
 
 
@@ -37,7 +45,8 @@
   height: 70vh;
   border: 5px solid black;
   margin: auto;
-  overflow: hidden; /* change from visible to hidden */
+  overflow: hidden;
+  /* change from visible to hidden */
   position: relative;
   cursor: url('../assets/game/aim.png'), pointer;
 }
@@ -63,6 +72,7 @@
 
 .gameStats div {
   flex-grow: 1;
+  padding-top: 28px;
 }
 
 .gameButtons {
@@ -71,12 +81,14 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  
+
 
 
   .btn {
-    width: 100% !important; /* Adjust as necessary */
-    margin: 10px 0; /* Gives 10px vertical space between buttons */
+    width: 100% !important;
+    /* Adjust as necessary */
+    margin: 10px 0;
+    /* Gives 10px vertical space between buttons */
   }
 }
 
@@ -87,25 +99,29 @@
   align-items: center;
   gap: 5px;
   text-align: center;
-  
+
 }
 
 @keyframes moveDuck {
   0% {
     transform: translateX(0) translateY(0);
   }
+
   25% {
     transform: translateX(25vw) translateY(-5vh);
   }
+
   50% {
     transform: translateX(50vw) translateY(0);
   }
+
   75% {
     transform: translateX(75vw) translateY(5vh);
   }
+
   100% {
     transform: translateX(100vw) translateY(0);
-    
+
   }
 }
 
@@ -120,7 +136,8 @@
   left: 0;
   // margin: 2px;
   animation: moveDuck 4.5s linear infinite;
-  animation-duration: 3s; /* Adjust this based on desired speed */
+  animation-duration: 3s;
+  /* Adjust this based on desired speed */
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   transition: top 1s ease-in-out;
@@ -139,7 +156,8 @@
   left: 0;
   margin: 2px;
   animation: moveDuck 6.5s linear infinite;
-  animation-duration: 5s; /* Adjust this based on desired speed */
+  animation-duration: 5s;
+  /* Adjust this based on desired speed */
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   transition: top 1s ease-in-out;
@@ -157,7 +175,8 @@
   left: 0;
   margin: 2px;
   animation: moveDuck 3.5s linear infinite;
-  animation-duration: 3s; /* Adjust this based on desired speed */
+  animation-duration: 3s;
+  /* Adjust this based on desired speed */
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   transition: top 1s ease-in-out;
@@ -248,57 +267,59 @@
 @media (max-width: 735px) {
 
 
-  .gameSection{
-    margin-top: 90px;
-
-    width: 85vw;   /* Full viewport width */
-    height: 75vh;  /* Full viewport height */
-}
-
-
-.background {
-  width: 85vw;   /* Full viewport width */
-  height: 75vh;  /* Full viewport height */
-}
+  .gameSection {
+    margin-bottom: 20px;
+    width: 92vw;
+    /* Full viewport width */
+    height: 82vh;
+    /* Full viewport height */
+  }
 
 
-.game-title  {
-  padding-bottom: 18px;
-
- h1 {
-  font-size: 32px;
-}
-}
-
-
-.container {
-  width: 90%;
-  cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
-  touch-action: manipulation;
-  height: 60vh;
-}
-
-.target {
-  cursor: pointer;
-}
-
-.gameStats {
-
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 10%;
-  padding: 5px;
-  font-size: 16px;
-  align-items: center; /* It's already there, just ensuring */
-  padding-top: 20px; 
+  .background {
+    width: 85vw;
+    /* Full viewport width */
+    height: 75vh;
+    /* Full viewport height */
+  }
 
 
-}
+  .game-title {
+    padding-bottom: 18px;
 
-.instructions 
-{
- 
+    h1 {
+      font-size: 32px;
+    }
+  }
+
+
+  .container {
+    width: 90%;
+    cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
+    touch-action: manipulation;
+    height: 60vh;
+  }
+
+  .target {
+    cursor: pointer;
+  }
+
+  .gameStats {
+
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 10%;
+    padding: 5px;
+    font-size: 14px;
+    align-items: center;
+    /* It's already there, just ensuring */
+
+  }
+
+  .instructions {
+
     height: 80%;
     width: 85%;
     background: rgb(0, 175, 185);
@@ -309,59 +330,62 @@
     border-radius: 5%;
     position: absolute;
     border: black solid 3px;
-  
-  p {
 
-  font-size: 14px;
-  margin-bottom: 12px;
-}
+    p {
 
-button{
-  width: 140px;
-    height: 40px;
-}
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
 
-}
+    button {
+      width: 140px;
+      height: 40px;
+    }
 
-.gameover {
+  }
 
-  height: 80%;
-  width: 80%;
+  .gameover {
 
-  padding: 10px;
+    height: 80%;
+    width: 80%;
 
-}
+    padding: 10px;
 
-.duck {
-  animation: moveDuck 4.5s linear infinite;
-  animation-duration: 1.75s; /* Adjust this based on desired speed */
+  }
 
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
+  .duck {
+    animation: moveDuck 4.5s linear infinite;
+    animation-duration: 1.75s;
+    /* Adjust this based on desired speed */
 
-  
+    animation-fill-mode: forwards;
+    transition: top 1s ease-in-out;
 
-}
 
-.carrot {
 
-  z-index: 10;
-  animation: moveDuck 4.5s linear infinite;
-  animation-duration: 2s; /* Adjust this based on desired speed */
+  }
 
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
-}
+  .carrot {
 
-.meat {
+    z-index: 10;
+    animation: moveDuck 4.5s linear infinite;
+    animation-duration: 2s;
+    /* Adjust this based on desired speed */
 
-  z-index: 10;
-  animation: moveDuck 4.5s linear infinite;
-  animation-duration: 1.5s; /* Adjust this based on desired speed */
+    animation-fill-mode: forwards;
+    transition: top 1s ease-in-out;
+  }
 
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
-}
+  .meat {
+
+    z-index: 10;
+    animation: moveDuck 4.5s linear infinite;
+    animation-duration: 1.5s;
+    /* Adjust this based on desired speed */
+
+    animation-fill-mode: forwards;
+    transition: top 1s ease-in-out;
+  }
 
 
 

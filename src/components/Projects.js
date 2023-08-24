@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import Game from './Game';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { GitHub } from "@material-ui/icons";
 
 const Box = React.forwardRef(({ label, color, onClick, visible }, ref) => (
   <div
@@ -19,11 +20,12 @@ const Box = React.forwardRef(({ label, color, onClick, visible }, ref) => (
   </div>
 ));
 
-function Popup({ onClose, content }) {
+function Popup({ onClose, contentObj }) {
   return (
     <div className="popup">
       <div className="popup-content">
-        {typeof content === 'string' ? <p>{content}</p> : content}
+        <h1>{contentObj.label}</h1>
+        {typeof contentObj.content === 'string' ? <p>{contentObj.content}</p> : contentObj.content}
         <button className="close-button" onClick={onClose}>X</button>
       </div>
     </div>
@@ -74,8 +76,8 @@ function Projects({ isOpen, onToggle }) {
     }
   }, [isOpen]);
 
-  const handleClick = (content) => {
-    setPopups([...popups, content]);
+  const handleClick = (label, content) => {
+    setPopups([...popups, { label, content }]);
     setVisible(false);
   };
 
@@ -87,26 +89,64 @@ function Projects({ isOpen, onToggle }) {
   return (
     <div ref={projectsRef} className={`projects ${isOpen ? '' : 'collapsed'}`} id="Projects">
       <h1 className='project-title' onClick={toggleSection}>Projects</h1>
-      {popups.map((content, index) => (
-        <Popup key={index} content={content} onClose={() => handleClose(index)} />
+      {popups.map((contentObj, index) => (
+        <Popup key={index} contentObj={contentObj} onClose={() => handleClose(index)} />
       ))}
+
+
       <div className={`box-wrapper ${isOpen ? 'buttons-visible' : ''}`}>
         <div ref={boxContainerRef} className="box-container">
           <Box
             ref={el => boxRefs.current[0] = el}
             label="Web Dev Project"
             color="#0081a7"
-            onClick={() => handleClick(<h1 className='project-title'>Web project 1</h1>)}
+            onClick={() => handleClick(
+              <div>
+                <h1 className='project-title'>Web project 1</h1>
+                <div>Some additional content here.</div>
+                <div>More content here if needed.</div>
+                {/* You can keep adding more content as needed. */}
+              </div>
+            )}
             visible={visible}
           />
-          
+
           <Box
             ref={el => boxRefs.current[1] = el}
             label="Vegan Duck Hunt"
             color="#00afb9"
-            onClick={() => handleClick(<Game />)}
+            onClick={() => handleClick(
+              <div className='parent-container'>
+                <div className='project-div'>
+                  <h3>About the project</h3>
+                  <div className='project-info'>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum lacus ac eleifend pellentesque.
+                      Aenean nec rhoncus risus, et vulputate metus. Ut libero turpis, pellentesque nec elit sed, faucibus malesuada mi.
+                      Cras ligula dui, luctus ac interdum vitae, malesuada vel magna. Nullam condimentum, ex vitae vestibulum ullamcorper,
+                      quam magna imperdiet ex, et iaculis arcu sem ut leo. Vestibulum interdum libero augue. Nam porta vel nunc eget condimentum.
+                      Integer eu ullamcorper risus. Suspendisse metus tortor, auctor id consectetur eget, sollicitudin ac sem.
+                      Donec commodo blandit cursus. Aenean pharetra tristique nisl, accumsan pellentesque sapien rutrum ac.
+                      Curabitur eleifend gravida purus, ac euismod diam euismod ac. Maecenas ac cursus metus.</p>
+
+                  </div>
+                  <div className='github-link'>
+                  <p>This project is a updated version using React</p>
+                  <p>Github Link for original project: </p>
+                  <a href="https://github.com/cbryant93/sparta-core-project-1">
+                    <GitHub className="icon" />
+                  </a>
+                  </div>
+                </div>
+                <div className='game-content'>
+                  <Game />
+                </div>
+              </div>
+
+            )}
             visible={visible}
           />
+
           <Box
             ref={el => boxRefs.current[2] = el}
             label="Project 3"
