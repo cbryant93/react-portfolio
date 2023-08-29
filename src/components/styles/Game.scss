@@ -85,7 +85,7 @@
 
 
   .btn {
-    width: 100% !important;
+    width: 100% ;
     /* Adjust as necessary */
     margin: 10px 0;
     /* Gives 10px vertical space between buttons */
@@ -264,7 +264,7 @@
   margin-top: 30px;
 }
 
-@media (max-width: 735px) {
+@media (max-width: 840px) {
 
 
   .gameSection {
@@ -311,19 +311,23 @@
     margin-right: auto;
 
     height: 10%;
-    padding: 5px;
-    font-size: 14px;
+    padding: 8px;
+    font-size: 13px;
     align-items: center;
     /* It's already there, just ensuring */
+    p{
+      margin-bottom: 22px;
+      
+    }
 
   }
 
   .instructions {
 
-    height: 80%;
+    height: 85%;
     width: 85%;
     background: rgb(0, 175, 185);
-    padding: 40px;
+    padding: 30px;
     justify-content: space-evenly;
     text-align: center;
     color: black;
@@ -333,13 +337,13 @@
 
     p {
 
-      font-size: 14px;
-      margin-bottom: 12px;
+      font-size: 12px;
+      margin-bottom: 2px;
     }
 
     button {
-      width: 140px;
-      height: 40px;
+      width: 120px;
+      height: 35px;
     }
 
   }
@@ -351,18 +355,34 @@
 
     padding: 10px;
 
+    h2{
+      font-size: 24px;
+    }
+
+    h3{
+      font-size: 16px;
+    }
+
+    p{
+      font-size: 14px;
+    }
+
+    .btn{
+      width: 120px;
+      height: 35px;
+    }
+
   }
 
   .duck {
     animation: moveDuck 4.5s linear infinite;
     animation-duration: 1.75s;
     /* Adjust this based on desired speed */
-
     animation-fill-mode: forwards;
     transition: top 1s ease-in-out;
-
-
-
+    background-repeat: no-repeat;
+    width: 80px;  
+    height: 60px; 
   }
 
   .carrot {
@@ -371,9 +391,11 @@
     animation: moveDuck 4.5s linear infinite;
     animation-duration: 2s;
     /* Adjust this based on desired speed */
-
     animation-fill-mode: forwards;
     transition: top 1s ease-in-out;
+    background-repeat: no-repeat;
+    width: 80px;  
+    height: 60px; 
   }
 
   .meat {
@@ -382,9 +404,11 @@
     animation: moveDuck 4.5s linear infinite;
     animation-duration: 1.5s;
     /* Adjust this based on desired speed */
-
     animation-fill-mode: forwards;
     transition: top 1s ease-in-out;
+    background-repeat: no-repeat;
+    width: 80px;  
+    height: 60px; 
   }
 
 

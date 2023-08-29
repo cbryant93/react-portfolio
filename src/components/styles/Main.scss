@@ -20,6 +20,7 @@
 
 .text {
     line-height: 55px;
+
     p {
         color: rgb(240, 113, 103);
         text-transform: uppercase;
@@ -35,6 +36,7 @@
 
 .icons {
     display: flex;
+
     .icon {
         margin-top: 1rem;
         margin-right: 1.4rem;
@@ -79,6 +81,7 @@
     .text {
         white-space: nowrap;
         line-height: 30px;
+
         p {
             font-size: 14px;
         }
@@ -91,15 +94,17 @@
     .buttons button {
         padding: 8px 20px;
     }
+
     .icons {
         margin-right: 1rem;
+
         .icon {
             font-size: 25px;
         }
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:840px) {
     .main__content {
         margin-left: 0;
     }
@@ -108,40 +113,92 @@
         text-align: center;
         flex-direction: column-reverse;
         justify-content: center;
+
+        .text {
+            h1 {
+                font-size: 42px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
     }
 
     .main__img {
-        display: flex; /* Add this line */
-        justify-content: center; /* Add this line */
-        margin-right: 0; /* Reset the margin-right */
+        display: flex;
+        /* Add this line */
+        justify-content: center;
+        /* Add this line */
+        margin-right: 0;
+        /* Reset the margin-right */
+        width: 600px;
+        height: auto;
+
 
         img {
             max-width: 100%;
             height: auto;
+
         }
     }
 
     .text {
-        h1 {
-            font-size: 23px;
-        }
-        p {
-            color: #000;
-            font-size: 11px;
-        }
+        line-height: 55px;
     }
 
     .buttons button {
-        justify-content: space-evenly; 
+        justify-content: space-evenly;
         align-items: center;
         background-color: burlywood;
     }
 
-    .icons { 
+    .icons {
         margin-left: 1.5rem;
         justify-content: center;
+
         .icon {
             color: firebrick;
+            font-size: 32px;
         }
+    }
+
+    @media (max-width:390px) {
+
+
+        .main__img {
+
+            width: 400px;
+            height: auto;
+
+
+        }
+
+        .main__container {
+
+            .text {
+                h1 {
+                    font-size: 28px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .icons {
+
+
+            .icon {
+
+                font-size: 28px;
+            }
+        }
+
+        .text {
+            line-height: 45px;
+        }
+
     }
 }

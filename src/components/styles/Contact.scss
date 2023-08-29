@@ -81,14 +81,22 @@ button{
   
   
 
-@media(max-width:735px) {
+@media(max-width:840px) {
     .inputs{
         width: 100%;
+        font-size: 20px;
+        height: 85%;
         
 
         input{
-            padding: 15px;
+            padding: 25px;
+            font-size: 18px;
         }
+    }
+
+    .message{
+        font-size: 18px;
+
     }
 
     button {
@@ -97,21 +105,75 @@ button{
         align-items: center; // Center vertically
         margin: 0 auto; // Center the button itself
         margin-top: 1.5rem;
+        font-size: 20px;
+        width: 30%;
       }
 
 
         .contact {
-            height: auto;   
+            height: 100vh;   
             min-height: unset; // Override the min-height
             transition: height 0.3s ease; // Add a transition for smooth collapsing
         }
       
         .contact.collapsed {
-            height: 185px; // Adjust this value to fit the "Projects" title
+            height: 20vh; // Adjust this value to fit the "Projects" title
+            display: flex;              // Turn the .skills into a flex container
+            align-items: center;       // Vertically center the content
+            justify-content: center;   // Horizontally center the content
         }
       
         .contact.collapsed .inputs {
             display: none; // Hide the content
         }
       
+}
+
+@media(max-width:390px) {
+    .contact {
+        height: 100vh;   
+
+    }
+
+    .contact h1 {
+        font-size: 44px;
+    }
+    
+    .inputs{
+        width: 100%;
+        font-size: 12px;
+        padding: 1.2rem;
+        height: 85%;
+        
+
+        input{
+            padding: 15px;
+            font-size: 12px;
+        }
+    }
+
+    label{
+
+        font-size: 14px;
+        padding: 6px;
+
+    }
+    .message{
+        font-size: 12px;
+        height: 40%;
+        margin-bottom: 12px;
+
+
+    }
+
+    button {
+
+        margin-top: 0.1rem;
+        font-size: 12px;
+        width: 40%;
+
+      }
+
+    
+
 }

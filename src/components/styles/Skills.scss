@@ -38,31 +38,59 @@
 }
 
 
-@media (max-width: 735px) {
+@media (max-width: 840px) {
     .skills {
-        height: auto;
+        height: 100vh;
         min-height: unset; // Override the min-height
         transition: height 0.3s ease; // Add a transition for smooth collapsing
     }
 
     .skills.collapsed {
-        height: 125px; // Adjust this value to fit the "Skills" title
-        overflow: hidden; // Hide overflow content
+        height: 20vh;
+        overflow: hidden; 
+        display: flex;              // Turn the .skills into a flex container
+        align-items: center;       // Vertically center the content
+        justify-content: center;   // Horizontally center the content
     }
 
     .skills.collapsed .skill__content p {
-        display: none; // Hide the content
-    }
-
-    .skills.collapsed {
-        height: 125px; // Adjust this value to fit the "Skills" title
-        overflow: hidden; // Hide overflow content
+        display: none;
     }
 
     .skill__container {
         flex-direction: column;
         margin: 1.5rem;
     }
+
+    .skill__content {
+        line-height: 120px;
+    
+    
+        p {
+
+            font-size: 24px;
+        }
+    }
+    
     
     // rest of your styles for the mobile view
 }
+
+@media (max-width: 390px) {
+
+    .skill__content {
+        line-height: 70px;
+    
+        h1 {
+            font-size: 44px;
+            margin-bottom: 2.125rem;
+        }
+    
+        p {
+            font-size: 16px;
+        }
+    }
+    
+
+}
+

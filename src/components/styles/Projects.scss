@@ -165,20 +165,36 @@
   display: none;
 }
 
-@media (max-width: 735px) {
+@media (max-width: 840px) {
   .projects {
-    height: auto;
+    height: 100vh;
     min-height: unset;
     transition: height 0.3s ease;
 
     &.collapsed {
-      height: 125px;
+      height: 20vh;
+      overflow: hidden; 
+      display: flex;
+      flex-direction: column;       // Stack the children vertically
+      align-items: center;          // Center children horizontally
+      justify-content: center;      // Center children vertically
     }
 
     &.collapsed .box-container {
       display: none;
     }
   }
+  
+  .project-title{
+    margin-bottom:0.1em;
+  }
+
+  .box{
+    label{
+    font-size: 20px;
+  }
+}
+
 
   .box-wrapper {
     position: relative; /* Set the position context for the buttons */
@@ -193,26 +209,25 @@
     -webkit-overflow-scrolling: touch; // Enable momentum scrolling on iOS
     position: relative;
     margin-bottom: 70px;
-    width: 105%;
-    
-
-
-    
+    width: 100%;
+ 
+ 
     .box {
       scroll-snap-align: start; // Snap each box to the left edge of the container
       margin-right: 20px;
       flex: 0 0 calc(100%); /* Same as the new width above */
-      height: 300px; /* Same as the new height above */
+      height: 600px; /* Same as the new height above */
+      font-size: 26px;
     }
-  }
 
+
+  }
   .prev-button, .next-button {
     position: absolute; /* Position relative to .box-wrapper */
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     border: none;
     cursor: pointer;
-    top: 85%; /* center vertically */
     transform: translateY(-50%);
     display: flex;        /* Flexbox layout */
     align-items: center;  /* Center vertically */
@@ -223,7 +238,7 @@
     padding: 0;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(135, 130, 130, 0.9);
     }
   }
 
@@ -239,6 +254,11 @@
   .box-wrapper.buttons-visible .prev-button,
   .box-wrapper.buttons-visible .next-button {
     display: block;
+  }
+
+  .projects.collapsed .prev-button,
+  .projects.collapsed .next-button {
+      display: none;
   }
 
   .popup {
@@ -280,19 +300,19 @@
     justify-content: center;  /* Center children vertically */
     align-items: center;      /* Center children horizontally */
     padding: 1px;
-     margin-right: 50px;
+     margin-left: 30px;
      padding-top: 45px;
 
 
 
     h3 {
       text-align: center;    /* Horizontally center the text */
-      font-size: 18px;
+      font-size: 24px;
     }
 
     p {
       text-align: center;    /* Horizontally center the text */
-      font-size: 10px;
+      font-size: 14px;
     }
 
     .project-info{
@@ -317,6 +337,77 @@
   }
 
 }
+}
+
+@media (max-width: 390px) {
+
+
+  .projects {
+    height: 100vh;
+  
+  
+    .project-title {
+
+
+      margin-bottom: 2.125rem;
+      font-size: 44px;
+
+    }
+
+  }
+
+
+  .box-container {
+
+    .box {
+
+      height: 300px; /* Same as the new height above */
+    }
+
+
+  }
+
+  .prev-button, .next-button {
+    margin-top: 150px;
+
+    width: 30px;
+    height: 30px;
+    
+
+  }
+
+  .project-div {
+
+    padding-right: 80px;
+
+
+
+
+    h3 {
+      text-align: center;    /* Horizontally center the text */
+      font-size: 18px;
+    }
+
+    p {
+      text-align: center;    /* Horizontally center the text */
+      font-size: 10px;
+    }
+
+    .project-info{
+      display: none;
+    }
+
+}
+
+.prev-button, .next-button {
+
+  width: 40px;
+  height: 40px;
+  top:85%;
+
+}
+
+
 }
 
 

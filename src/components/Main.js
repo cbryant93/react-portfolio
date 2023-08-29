@@ -17,7 +17,7 @@ const Main = ({ onContactClick }) => {
 
                         <p>Hello Everyone</p>
                         <h1>I am Christian</h1>
-                        <p>I am a SDET Engineer</p>
+                        <p>I am an SDET Engineer</p>
 
                         <div className="icons">
 
