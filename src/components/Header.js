@@ -3,8 +3,8 @@ import "./styles/Header.scss";
 import { Close, MenuOutlined } from "@material-ui/icons";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const Header = () => {
-  
+const Header = ({ onSectionClick, onSkillsClick, onProjectsClick, onContactClick }) => {
+
   const [active, setActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div className={`header ${scrolled ? "scrolled" : ""}`}>
-      
+
       <div className="header__logo">
         <h1>Christian Bryant</h1>
       </div>
@@ -39,14 +39,14 @@ const Header = () => {
           </div>
           <li>
             <Link to="Main"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-             onClick={showMenu}
-             >
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              onClick={showMenu}
+            >
               HOME
-              </Link>
+            </Link>
           </li>
 
           <li>
@@ -56,7 +56,10 @@ const Header = () => {
               smooth={true}
               offset={0}
               duration={500}
-              onClick={showMenu}
+              onClick={() => {
+                onSectionClick();
+                showMenu();
+              }}
             >
               ABOUT ME
             </Link>
@@ -69,7 +72,10 @@ const Header = () => {
               smooth={true}
               offset={0}
               duration={500}
-              onClick={showMenu}
+              onClick={() => {
+                onSkillsClick();
+                showMenu();
+            }}
             >
               SKILLS
             </Link>
@@ -82,7 +88,10 @@ const Header = () => {
               smooth={true}
               offset={0}
               duration={500}
-              onClick={showMenu}
+              onClick={() => {
+                onProjectsClick();
+                showMenu();
+              }}
             >
               PROJECTS
             </Link>
@@ -99,7 +108,10 @@ const Header = () => {
               smooth={true}
               offset={0}
               duration={500}
-              onClick={showMenu}
+              onClick={() => {
+                onContactClick();
+                showMenu();
+              }}
             >
               CONTACT
             </Link>

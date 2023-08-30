@@ -19,7 +19,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header
+      onSectionClick={() => handleSectionClick('section')} 
+      onSkillsClick={() => handleSectionClick('skills')} 
+      onProjectsClick={() => handleSectionClick('projects')} 
+      onContactClick={() => handleSectionClick('contact')} 
+
+      />
       <Main onContactClick={() => handleSectionClick('contact')} />
       <Section isOpen={openSection === 'section'} onToggle={() => handleSectionClick('section')} />
       <Skills isOpen={openSection === 'skills'} onToggle={() => handleSectionClick('skills')} />
