@@ -9,7 +9,10 @@ const Header = ({ onSectionClick, onSkillsClick, onProjectsClick, onContactClick
   const [scrolled, setScrolled] = useState(false);
 
   const showMenu = () => {
-    setActive(!active);
+    // If window width is less than 1281px (the breakpoint in your CSS for desktop view)
+    if (window.innerWidth < 1025) {
+      setActive(!active);
+    }
   };
 
   const handleScroll = () => {
@@ -23,7 +26,11 @@ const Header = ({ onSectionClick, onSkillsClick, onProjectsClick, onContactClick
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
 
   return (
     <div className={`header ${scrolled ? "scrolled" : ""}`}>
