@@ -1,204 +1,327 @@
-.main {
-    min-height: 100vh;
-    max-width: 100vw;
-    background-color: white;
-    position: relative;
-}
-
-.main__container {
-    display: flex;
-    height: 90vh;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    background-color: rgb(253, 252, 220);
-}
-
-.main__content {
-    margin-left: 2.445rem;
-}
-
-.text {
-    line-height: 55px;
-
-    p {
-        color: rgb(240, 113, 103);
-        text-transform: uppercase;
-        font-size: 22px;
-    }
-
-    h1 {
-        font-size: 50px;
-        text-transform: uppercase;
-        color: rgb(40, 175, 185);
-    }
-}
-
-.icons {
-    display: flex;
-
-    .icon {
-        margin-top: 1rem;
-        margin-right: 1.4rem;
-        font-size: 34px;
-        cursor: pointer;
-        color: rgb(40, 175, 185);
-
-        &:hover {
-            color: rgb(240, 113, 103);
-        }
-    }
-}
-
-.buttons {
-    button {
-        padding: 15px 40px;
-        background-color: rgb(240, 113, 103);
-        color: rgb(254, 217, 183);
-        border: 1px solid #fff;
-        cursor: pointer;
-        border-radius: 10px;
-        text-transform: uppercase;
-        font-weight: bolder;
-        justify-content: space-between;
-    }
-}
-
-.main__img {
-    clip-path: circle(35% at 50% 50%);
-    cursor: pointer;
-    width: 400px;
-    height: 265.47px;
-    margin-right: 200px;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-@media (max-width:1200px) {
-    .text {
-        white-space: nowrap;
-        line-height: 30px;
-
-        p {
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: 30px;
-        }
-    }
-
-    .buttons button {
-        padding: 8px 20px;
-    }
-
-    .icons {
-        margin-right: 1rem;
-
-        .icon {
-            font-size: 25px;
-        }
-    }
-}
-
-@media (max-width:840px) {
-    .main__content {
-        margin-left: 0;
+    // Base style for mobile
+    .main {
+        min-height: 100vh;
+        max-width: 100vw;
+        background-color: white;
+        position: relative;
     }
 
     .main__container {
+        display: flex;
+        height: 90vh;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        background-color: rgb(253, 252, 220);
+
         text-align: center;
         flex-direction: column-reverse;
         justify-content: center;
-
-        .text {
-            h1 {
-                font-size: 42px;
-            }
-
-            p {
-                font-size: 18px;
-            }
-        }
     }
 
-    .main__img {
-        display: flex;
-        /* Add this line */
-        justify-content: center;
-        /* Add this line */
-        margin-right: 0;
-        /* Reset the margin-right */
-        width: 600px;
-        height: auto;
 
-
-        img {
-            max-width: 100%;
-            height: auto;
-
-        }
-    }
 
     .text {
-        line-height: 55px;
+        line-height: 3rem;
+
+        p {
+            color: rgb(240, 113, 103);
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-transform: uppercase;
+            color: rgb(40, 175, 185);
+        }
     }
 
-    .buttons button {
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: burlywood;
+    .main__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* This will center-align its direct children horizontally */
+        width: 85%;
+        
     }
 
     .icons {
-        margin-left: 1.5rem;
+   
         justify-content: center;
+        margin-right: 0;
+        max-width: 300px;  /* This sets a maximum width for the container */
+        width: 100%;  /* Use up to 100% of the space available, up to the max-width */
+        display: flex;
+        justify-content: center;  /* This centers the icons within the .icons container */
+        text-align: left; 
+        gap: 1.5rem;
+   
+  
 
         .icon {
-            color: firebrick;
-            font-size: 32px;
+            margin-top: 1rem;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: rgb(40, 175, 185);
+
+            &:last-child { 
+                margin-right: 0;  /* Ensures the last icon doesn't have extra margin to the right */
+            }
+
+            &:hover {
+                color: rgb(240, 113, 103);
+            }
         }
     }
 
-    @media (max-width:390px) {
 
+    .main__img {
+        clip-path: circle(35% at 50% 50%);
+        cursor: pointer;
+        width: 110%;
+        /* Changed to percentage for responsiveness */
+        max-width: 500px;
+        /* Set a maximum width so the image doesn't become too large on wide screens */
+        height: auto;
+        /* Allow the height to adjust automatically based on the width, maintaining aspect ratio */
+        margin-right: 0;
+        /* Removed repeated property */
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            /* Set image width to 100% of its container */
+            height: auto;
+            /* Keep aspect ratio intact */
+            object-fit: cover;
+            /* Cover the content box, potentially cropping the image */
+        }
+    }
+
+
+
+
+    //Small Mobile
+    @media (max-width: 480px) {
+
+
+
+
+    }
+
+    //Tablet Portrait
+
+    @media (min-width: 481px) and (max-width: 768px) {
+
+        //Tablet Portrait
+
+        .text {
+            line-height: 3rem;
+    
+            p {
+                font-size: 1.4em;
+            }
+    
+            h1 {
+                font-size: 2.3em;
+            }
+        }
+    
+        .icons {
+
+            .icon {
+                font-size: 1.9em;
+            }
+        }
 
         .main__img {
 
-            width: 400px;
-            height: auto;
-
+            width: 100%;
+            max-width: 630px;
 
         }
+
+
+
+    }
+
+    //Tablet Landscape
+    @media (min-width: 769px) and (max-width: 1023px) {
+
+        .text {
+            line-height: 3rem;
+    
+            p {
+                font-size: 1.5em;
+            }
+    
+            h1 {
+                font-size: 2.4em;
+            }
+        }
+    
+        .icons {
+
+            .icon {
+                font-size: 2em;
+         
+            }
+        }
+
+        .main__img {
+
+            width: 100%;
+            max-width:550px;
+
+        }
+    }
+
+    //Smaller desktop
+    @media (min-width: 1024px) and (max-width: 1280px) {
+
+            // Base style for mobile
+
+
+    .main__container {
+
+        flex-direction: row; /* Change flex direction to row for desktop */
+        justify-content: space-between; /* Distributes children evenly with maximum space between */
+        align-items: center; /* Vertically center-aligns children */
+        
+        
+    }
+
+    .main__content{
+
+        width: 45%; /* You can adjust this based on your design needs */
+        margin-right: 0; /* Reset the right margin for desktop */
+        margin-bottom: 0; /* Reset the bottom margin for desktop */
+        text-align: left;
+
+
+    }
+
+    .text {
+        line-height: 3rem;
+
+
+        p {
+            font-size: 1.4em;
+        }
+
+        h1 {
+            font-size: 2.4em;
+        }
+    }
+
+    .icons {
+        text-align:left;
+        display: block;
+       
+        
+       
+    
+        .icon {
+
+            font-size: 1.9em;
+
+            &:last-child { 
+                margin-right: 0.5em;  /* Ensures the last icon doesn't have extra margin to the right */
+            }
+
+        }
+    }
+
+  
+
+
+    .main__img {
+        width: 100%;
+        /* Changed to percentage for responsiveness */
+        max-width: 460px;
+        /* Set a maximum width so the image doesn't become too large on wide screens */
+        margin-right: 7%;
+        width: 45%; /* Adjust the width of the image container */
+        margin-left: 0; /* Reset the left margin for desktop */
+        margin-top: 0; /* Reset the top margin for desktop */
+        display: flex;
+        justify-content:right;
+
+    }
+
+}
+        
+    
+
+    
+
+    //Normal Desktop
+    @media (min-width: 1281px) {
 
         .main__container {
 
-            .text {
-                h1 {
-                    font-size: 28px;
-                }
-
-                p {
-                    font-size: 14px;
-                }
-            }
+            flex-direction: row; /* Change flex direction to row for desktop */
+            justify-content: space-between; /* Distributes children evenly with maximum space between */
+            align-items: center; /* Vertically center-aligns children */
+            
+            
         }
-
-        .icons {
-
-
-            .icon {
-
-                font-size: 28px;
-            }
+    
+        .main__content{
+    
+            width: 45%; /* You can adjust this based on your design needs */
+            margin-right: 0; /* Reset the right margin for desktop */
+            margin-bottom: 0; /* Reset the bottom margin for desktop */
+            text-align: left;
+        
+    
         }
-
+    
         .text {
-            line-height: 45px;
+            line-height: 3rem;
+    
+    
+            p {
+                font-size: 1.5em;
+            }
+    
+            h1 {
+                font-size: 2.5em;
+            }
         }
+    
+        .icons {
+            text-align:left;
+            display: block;
+                
+            .icon {
+    
+                font-size: 2em;
 
+                &:last-child { 
+                    margin-right: 0.5em;  /* Ensures the last icon doesn't have extra margin to the right */
+                }
+    
+            }
+        }
+    
+    
+        .main__img {
+            width: 100%;
+            /* Changed to percentage for responsiveness */
+            max-width: 450px;
+            /* Set a maximum width so the image doesn't become too large on wide screens */
+            margin-right: 7%;
+            width: 45%; /* Adjust the width of the image container */
+            margin-left: 0; /* Reset the left margin for desktop */
+            margin-top: 0; /* Reset the top margin for desktop */
+            display: flex;
+            justify-content:right;
+    
+        }
     }
-}
+
+
+
+    
