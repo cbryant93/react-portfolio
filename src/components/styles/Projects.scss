@@ -172,7 +172,7 @@
     transition: height 0.3s ease;
 
     &.collapsed {
-      height: 20vh;
+      height: 15%;
       overflow: hidden; 
       display: flex;
       flex-direction: column;       // Stack the children vertically

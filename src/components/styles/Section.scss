@@ -1,122 +1,256 @@
-.sections {
-  width: 100%;
-  background: rgb(224, 245, 243);
-  overflow: hidden;
-  transition: height 0.3s ease;
-  height: 100vh;
-}
-
-.section__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2.5rem;
-  background-color: rgb(255, 255, 255);
-}
-
-.section__img img {
-  margin-top: 1rem;
-  width: 520px;
-  height: 600px;
-  padding: 10px;
-  object-fit: cover;
-}
-
-.section__content {
-  margin: 0 auto;
-  line-height: 50px;
-  text-align: center;
-
-  h1 {
-    color: rgb(240, 113, 103);
-    text-transform: uppercase;
-    font-size: 55px;
-    margin-bottom: 3.25rem;
-  }
-
-  p {
-    display: block;
-    font-weight: bolder;
-    color: rgb(0, 175, 185);
-    border-bottom: 1px solid rgb(0, 0, 0);
-    cursor: pointer;
-    box-shadow: 2px 2px 15px rgb(0, 0, 0);
-    padding: 6px;
-    margin-block: 7px;
-  }
-}
-  
-  @media (max-width: 840px) {
+    // Base style for mobile
 
     .sections {
-        height: 100vh;
+        width: 100%;
+        background: rgb(224, 245, 243);
+        overflow: hidden;
+        transition: height 0.3s ease;
+        height: 100%;
+      }
+      
+      .section__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 2.5rem;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        justify-content: center; /* Center the items horizontally */
+        align-items: center;     /* Center the items vertically */
       }
 
-    .sections.collapsed {
-      height: 35vh; // Adjust this value to fit the "About Me" title
-    }
-  
-    .sections.collapsed .section__content p {
-      display: none; // Hide the content
-    }
-  
-    .section__img img {
-      width: 320px;
-      height: 240px;
-      padding: 2px;
-      object-fit: cover;
-    }
-  
-    .section__container {
-      flex-direction: column;
-
-
-  
-      h1 {
-        margin-bottom: 1em;
-
+      .sections.collapsed {
+        height: 15%; // Adjust this value to fit the "About Me" title
       }
-  
-      p {
-        font-size: 24px;
-        margin-block: 5px;
-        padding: 2px;
-        line-height: 55px;
+
+      .sections.collapsed .section__content p {
+        display: none; // Hide the content
       }
-    }
-  }
-  
-  @media (max-width: 390px) {
 
-    .sections {
-      height: auto;
+      .section__img {
+        display: flex;           /* Convert to flex container */
+        justify-content: center; /* Center the image horizontally */
+        align-items: center;     /* Center the image vertically */
     }
-    .section__container {
-  
-      h1 {
-        font-size: 44px;
-        margin-bottom: 0.5rem;
-
+      
+      .section__img img {
+        max-width: 100%;   /* Ensures the image never stretches beyond its container */
+        width: 100%;       /* Image will try to take full width of its container, but respects max-width */
+        height: auto;      /* Maintains the image's aspect ratio */
+        padding: 1em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */
+        object-fit: cover; /* Ensures the content is sized to cover the container, potentially cropping the image */
+        
+    }
+      
+      .section__content {
+        margin: 0 auto;
+        line-height: 1.6em;
+        text-align: center;
+      
+        h1 {
+          color: rgb(240, 113, 103);
+          text-transform: uppercase;
+          font-size: 3em;
+          margin-bottom: 2.25rem;
+          
+        }
+      
+        p {
+          display: block;
+          font-weight: bolder;
+          color: rgb(0, 175, 185);
+          border-bottom: 1px solid rgb(0, 0, 0);
+          cursor: pointer;
+          box-shadow: 2px 2px 15px rgb(0, 0, 0);
+          padding: 0.5em;
+          margin-block: 0.5em;
+          font-size: 0.9em;
+        }
       }
-  
-      p {
-        font-size: 14px;
 
-        line-height: 28px;
-      }
-    }
-  
-    .section__img img {
-      width: 250px;
-      height: 150px;
-      padding: 2px;
-      object-fit: cover;
+
+
+
+
+    //Small Mobile
+    @media (max-width: 480px) {
+
+
     }
 
-    .sections.collapsed {
-      height: 40vh; // Adjust this value to fit the "About Me" title
-    }
-  }
+    //Tablet Portrait
 
-  
-  
+    @media (min-width: 481px) and (max-width: 768px) {
+        .section__img img {
+            max-width: 80%;
+            width: 80%;
+            height: auto;
+            padding: 1.5em;
+            object-fit: cover;
+        }
+
+        .section__content {
+            line-height: 2.2em;
+          
+            h1 {
+
+              font-size: 3.5em;
+              
+            }
+          
+            p {
+              font-size: 1.5em;
+            }
+          }
+    }
+
+    //Tablet Landscape
+    @media (min-width: 769px) and (max-width: 1023px) {
+
+        .section__img img {
+            max-width: 90%;
+            width: 90%;
+            height: auto;
+            padding: 1.7em;
+            object-fit: cover;
+        }
+
+        .section__content {
+            line-height: 2.4em;
+          
+            h1 {
+
+              font-size: 3.7em;
+              
+            }
+          
+            p {
+              font-size: 1.7em;
+            }
+          }
+
+
+    }
+
+    //Smaller desktop
+    @media (min-width: 1024px) and (max-width: 1280px) {
+
+            // Base style for mobile
+
+            .sections {
+                height: 100vh; 
+            }
+
+              
+              .section__container {
+                flex-direction: row;       /* Make main axis horizontal */
+                height: 90vh;
+              }
+        
+              .sections.collapsed {
+
+                height: auto; 
+              }
+        
+              .sections.collapsed .section__content p {
+                display: block; // Hide the content
+              }
+        
+              .section__img {
+                flex: 1;   /* Take up any remaining space */
+                max-width: 50%; /* Limit to half the container width */
+            }
+              
+              .section__img img {
+                max-width: 100%;   /* Ensures the image never stretches beyond its container */
+                width: 100%;       /* Image will try to take full width of its container, but respects max-width */
+                height: auto;      /* Maintains the image's aspect ratio */
+                padding: 0.8em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */        
+            }
+              
+              .section__content {
+                line-height: 2.2em;
+                flex: 1;   /* Take up any remaining space */
+                max-width: 45%; /* Limit to half the container width */
+
+              
+                h1 {
+                  font-size: 3.5em;
+                  margin-bottom: 2.25rem;
+                  order: -1; /* Place the H1 title at the top */
+                  width: 100%; 
+                }
+              
+                p {
+                  padding: 0.5em;
+                  margin-block: 0.5em;
+                  font-size: 1.1em;
+                  display: block;
+                }
+              }
+
+}
+        
+    
+
+    
+
+    //Normal Desktop
+    @media (min-width: 1281px) {
+
+
+        .sections {
+            height: 100vh; 
+        }
+
+          
+          .section__container {
+            flex-direction: row;       /* Make main axis horizontal */
+            height: 90vh;
+          }
+    
+          .sections.collapsed {
+
+            height: auto; 
+          }
+    
+          .sections.collapsed .section__content p {
+            display: block; // Hide the content
+          }
+    
+          .section__img {
+            flex: 1;   /* Take up any remaining space */
+            max-width: 50%; /* Limit to half the container width */
+        }
+          
+          .section__img img {
+            max-width: 100%;   /* Ensures the image never stretches beyond its container */
+            width: 100%;       /* Image will try to take full width of its container, but respects max-width */
+            height: auto;      /* Maintains the image's aspect ratio */
+            padding: 1em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */        
+        }
+          
+          .section__content {
+            line-height: 3.8em;
+            flex: 1;   /* Take up any remaining space */
+            max-width: 50%; /* Limit to half the container width */
+
+          
+            h1 {
+              font-size: 4em;
+              margin-bottom: 2.25rem;
+              order: -1; /* Place the H1 title at the top */
+              width: 100%; 
+            }
+          
+            p {
+              padding: 0.4em;
+              margin-block: 0.5em;
+              font-size: 1em;
+              display: block;
+            }
+          }
+    }
+
+
+
+    
