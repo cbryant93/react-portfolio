@@ -5,6 +5,11 @@ const Skills = ({ isOpen, onToggle }) => {
   const skillsRef = useRef(null);
 
   const handleToggle = () => {
+    // Check if the window width is more than 1280px (desktop mode)
+    if (window.innerWidth > 1024) {
+      return; // Early return, no further code will be executed.
+    }
+
     onToggle(); // Call the function passed from App to handle state change
 
     if (!isOpen) { // If the section was closed
@@ -12,7 +17,7 @@ const Skills = ({ isOpen, onToggle }) => {
         skillsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
       }, 300); // 300ms is the duration of your transition
     }
-  };
+};
 
   useEffect(() => {
     if (isOpen) {
