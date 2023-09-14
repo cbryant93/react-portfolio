@@ -1,4 +1,4 @@
-import './styles/Projects_2.scss';
+import './styles/Projects.scss';
 import React, { useRef, useState, useEffect } from 'react';
 import Game from './Game';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
