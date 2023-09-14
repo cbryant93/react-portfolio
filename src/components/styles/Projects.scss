@@ -1,6 +1,7 @@
 .projects {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
   padding: 2rem;
@@ -21,9 +22,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 800px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding: 40px;
+  padding: 0.4em;
   box-sizing: border-box;
   background-color: rgb(253, 252, 220);
 
@@ -118,6 +119,17 @@
 .project-div  {
   padding: 15px;
   margin-top: 30px;
+
+  line-height: 0.7;
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  justify-content: center;
+  /* Center children vertically */
+  align-items: center;
+  /* Center children horizontally */
+  margin-left: 30px;
+  padding-top: 45px;
 
 
   h3 {

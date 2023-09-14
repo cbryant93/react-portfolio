@@ -1,4 +1,4 @@
-import './styles/Projects.scss';
+import './styles/Projects_2.scss';
 import React, { useRef, useState, useEffect } from 'react';
 import Game from './Game';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -61,8 +61,12 @@ function Projects({ isOpen, onToggle }) {
   };
 
   const toggleSection = () => {
+    
+    if (window.innerWidth > 1024) {
+      return; // Early return, no further code will be executed.
+    }
     onToggle();
-
+    
     if (!isOpen) {
       setTimeout(() => {
         projectsRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -70,11 +74,7 @@ function Projects({ isOpen, onToggle }) {
     }
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      projectsRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [isOpen]);
+
 
   const handleClick = (label, content) => {
     setPopups([...popups, { label, content }]);
@@ -102,9 +102,9 @@ function Projects({ isOpen, onToggle }) {
             color="#0081a7"
             onClick={() => handleClick(
               <div>
-                <h1 className='project-title'>Web project 1</h1>
-                <div>Some additional content here.</div>
-                <div>More content here if needed.</div>
+                <h1 className='popup-title'>Web project 1</h1>
+                <p>Some additional content here.</p>
+                <p>More content here if needed.</p>
                 {/* You can keep adding more content as needed. */}
               </div>
             )}
@@ -131,11 +131,14 @@ function Projects({ isOpen, onToggle }) {
 
                   </div>
                   <div className='github-link'>
-                  <p>This project is a updated version using React</p>
-                  <p>Github Link for original project: </p>
-                  <a href="https://github.com/cbryant93/sparta-core-project-1">
-                    <GitHub className="icon" />
-                  </a>
+                    <p>
+                      <span>This project is a updated version using React</span>
+                      <span>Github Link for original project:</span>
+                    </p>
+
+                    <a href="https://github.com/cbryant93/sparta-core-project-1">
+                      <GitHub className="icon" />
+                    </a>
                   </div>
                 </div>
                 <div className='game-content'>
@@ -162,13 +165,15 @@ function Projects({ isOpen, onToggle }) {
             visible={visible}
           />
         </div>
-        <button className="prev-button" onClick={handlePrev}>
-          <ArrowBackIcon />
-        </button>
+        <div className='carousel-buttons'>
+          <button className="prev-button" onClick={handlePrev}>
+            <ArrowBackIcon />
+          </button>
 
-        <button className="next-button" onClick={handleNext}>
-          <ArrowForwardIcon />
-        </button>
+          <button className="next-button" onClick={handleNext}>
+            <ArrowForwardIcon />
+          </button>
+        </div>
       </div>
     </div>
   );

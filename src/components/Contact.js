@@ -7,6 +7,9 @@ function Contact({ isOpen, onToggle }) {
   const contactRef = useRef(null);
 
   const toggleSection = () => {
+    if (window.innerWidth > 1024) {
+      return; // Early return, no further code will be executed.
+    }
     onToggle();
 
     if (!isOpen) { // If the section was closed
