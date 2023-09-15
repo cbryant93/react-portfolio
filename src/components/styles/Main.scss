@@ -49,7 +49,7 @@
    
         justify-content: center;
         margin-right: 0;
-        max-width: 300px;  /* This sets a maximum width for the container */
+
         width: 100%;  /* Use up to 100% of the space available, up to the max-width */
         display: flex;
         justify-content: center;  /* This centers the icons within the .icons container */
@@ -103,8 +103,7 @@
 
 
     //Small Mobile
-    @media (max-width: 480px) {
-
+    @media (max-width: 375px) {
 
 
 
@@ -142,6 +141,10 @@
 
         }
 
+        .MuiSvgIcon-root.MuiSvgIcon-root {
+            font-size: 1.7em !important;
+          }
+
 
 
     }
@@ -175,6 +178,10 @@
             max-width:550px;
 
         }
+
+        .MuiSvgIcon-root.MuiSvgIcon-root {
+            font-size: 1.9em !important;
+          }
     }
 
     //Smaller desktop
@@ -250,6 +257,10 @@
 
     }
 
+    .MuiSvgIcon-root.MuiSvgIcon-root {
+        font-size: 2em !important;
+      }
+
 }
         
     
@@ -319,6 +330,10 @@
             justify-content:right;
     
         }
+
+        .MuiSvgIcon-root.MuiSvgIcon-root {
+            font-size: 2em !important;
+          }
     }
 
 

@@ -6,18 +6,20 @@ function Contact({ isOpen, onToggle }) {
   const [errorMessage, setErrorMessage] = useState("");
   const contactRef = useRef(null);
 
-  const toggleSection = () => {
+  const handleToggle = () => {
+    // Check if the window width is more than 1280px (desktop mode)
     if (window.innerWidth > 1024) {
       return; // Early return, no further code will be executed.
     }
-    onToggle();
+
+    onToggle(); // Call the function passed from App to handle state change
 
     if (!isOpen) { // If the section was closed
       setTimeout(() => { // Wait for the transition to complete
         contactRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
       }, 300); // 300ms is the duration of your transition
     }
-  };
+};
 
   useEffect(() => {
     if (isOpen) {
@@ -53,7 +55,7 @@ function Contact({ isOpen, onToggle }) {
 
   return (
     <div ref={contactRef} className={`contact ${isOpen ? '' : 'collapsed'}`} id="Contact">
-      <h1 onClick={toggleSection}>CONTACT ME</h1>
+      <h1 onClick={handleToggle}>CONTACT ME</h1>
       <div className="inputs">
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="name">Your Name</label>

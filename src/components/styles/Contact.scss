@@ -1,179 +1,435 @@
-.contact {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    background-color: rgb(0, 175, 185);
-    padding: 2rem;
-    text-align: center; // Center the text within the .contact section
-}
+    // Base style for mobile
 
-.inputs{
-    width: 40%;
-    height: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    background-color: rgb(224, 245, 243);
-    text-align: center; 
-    padding: 1rem;
-
-
-}
-
-.contact h1 {
-    color: rgb(0, 129, 167);
-    font-size: 55px;
-    margin-bottom: 2rem; // Add some space below the title
-}
-
-input{
-    width: 90%;
-    align-items: center;
-    padding: 10px;
-    outline: none;
-    border: none;
-    
-}
-
-
-label{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    outline: none;
-    border: none;
-    color: rgb(0, 129, 167);
-}
-
-.message {
-    padding-bottom: 12rem;
-    width: 90%;
-}
-
-button{
-    background-color: rgb(240, 113, 103);
-    padding: 10px 40px;
-    cursor: pointer;
-    margin-top: 1rem;
-    border: 1px solid rgb(0, 129, 167);
-    color: white;
-    text-transform: uppercase;
-    width: 40%;
-    margin: 0 auto; 
-}
-
-.success-message {
-    background-color: #DFF2BF;
-    color: rgb(254, 217, 183);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px 0;
-  }
-
-  .success {
-    color: rgb(240, 113, 103);
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  
-
-@media(max-width:840px) {
-    .inputs{
+    .contact {
         width: 100%;
-        font-size: 20px;
-        height: 85%;
-        
+        height: 100vh;
+        margin: 0 auto;
+        background-color: rgb(0, 175, 185);
+        padding: 2rem;
+        text-align: center; // Center the text within the .contact section
+        min-height: unset; // Override the min-height
+        transition: height 0.3s ease; // Add a transition for smooth collapsing
 
-        input{
-            padding: 25px;
-            font-size: 18px;
+        h1 {
+            color: rgb(0, 129, 167);
+            font-size: 3em;
         }
     }
 
-    .message{
-        font-size: 18px;
+
+    .inputs {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        background-color: rgb(224, 245, 243);
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        font-size: 1.2em;
+        height: 83vh;
+        overflow: hidden; // add this line
+        margin-top: 1em;
+
+        .form {
+            height: 85vh;
+
+            input {
+                width: 90%;
+                align-items: center;
+                padding: 0.4em;
+                outline: none;
+                border: none;
+
+            }
+
+            button {
+                background-color: rgb(240, 113, 103);
+                cursor: pointer;
+                border: 1px solid rgb(0, 129, 167);
+                color: white;
+                text-transform: uppercase;
+                margin: 1.5rem auto 0;
+                display: block;
+                justify-content: center; // Center horizontally
+                align-items: center; // Center vertically
+                margin-top: 0.8rem;
+                width: 40%;
+                height: 6%;
+            }
+
+            .success {
+                color: rgb(240, 113, 103);
+                font-weight: bold;
+                margin-top: 1.4em;
+
+                font-size: 0.7em;
+
+            }
+
+            .error {
+
+                color: rgb(240, 113, 103);
+                font-weight: bold;
+                margin-top: 1.4em;
+
+                font-size: 0.4em;
+
+            }
+        }
 
     }
 
-    button {
-        display: flex; // Use flexbox
-        justify-content: center; // Center horizontally
-        align-items: center; // Center vertically
-        margin: 0 auto; // Center the button itself
-        margin-top: 1.5rem;
-        font-size: 20px;
-        width: 30%;
-      }
+
+
+    label {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.4em;
+        outline: none;
+        border: none;
+        color: rgb(0, 129, 167);
+    }
+
+    .message {
+        height: 45%;
+        width: 90%;
+    }
+
+
+    .contact.collapsed {
+        height: 15vh; // Adjust this value to fit the "Projects" title
+        display: flex; // Turn the .skills into a flex container
+        align-items: center; // Vertically center the content
+        justify-content: center; // Horizontally center the content
+    }
+
+    .contact.collapsed .inputs {
+        display: none; // Hide the content
+    }
+
+
+    //Small Mobile
+    @media (max-width: 375px) {
+
+        .contact {
+            width: 100%;
+            height: 100vh;
+
+            padding: 2rem;
+
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+
+
+        .inputs {
+
+            padding: 1rem;
+            width: 100%;
+            font-size: 1.1em;
+            height: 80vh;
+
+            .form {
+                height: 80vh;
+
+                input {
+                    width: 90%;
+                    padding: 0.4em;
+
+
+                }
+
+                button {
+                    margin: 1.5rem auto 0;
+                    margin-top: 1rem;
+                    width: 40%;
+                    height: 7%;
+                    font-size: 0.6em;
+                }
+
+                .success {
+                    margin-top: 1em;
+                    font-size: 0.55em;
+
+                }
+            }
+
+        }
+
+        .message {
+            height: 35%;
+            width: 90%;
+        }
+    }
+
+    //Tablet Portrait
+
+    @media (min-width: 481px) and (max-width: 768px) {
+
+        //Tablet Portrait
+
+        .contact {
+            width: 100%;
+            height: 100vh;
+            padding: 2rem;
+
+
+
+            h1 {
+                font-size: 3.5em;
+            }
+        }
+
+        .inputs {
+
+            padding: 1rem;
+            width: 90%;
+            font-size: 1.7em;
+            height: 80vh;
+
+            .form {
+                height: 80vh;
+
+                input {
+                    width: 80%;
+                    padding: 0.6em;
+                    font-size: 0.7em;
+
+
+                }
+
+                button {
+                    margin: 1.5rem auto 0;
+                    margin-top: 1rem;
+                    width: 30%;
+                    height: 6%;
+                    font-size: 0.6em;
+                }
+
+                .success {
+                    margin-top: 2em;
+                    font-size: 0.7em;
+
+                }
+            }
+
+        }
+
+
+        .message {
+            height: 35%;
+            width: 80%;
+            font-size: 0.7em;
+
+        }
+
+
+
+    }
+
+    //Tablet Landscape
+    @media (min-width: 769px) and (max-width: 1023px) {
+
+        .contact {
+            width: 100%;
+            height: 100vh;
+            padding: 2rem;
+
+
+
+            h1 {
+                font-size: 3.5em;
+
+            }
+        }
+
+        .inputs {
+
+            padding: 1rem;
+            width: 90%;
+            font-size: 1.7em;
+            height: 80vh;
+
+            .form {
+                height: 80vh;
+
+                input {
+                    width: 80%;
+                    padding: 0.6em;
+                    font-size: 0.7em;
+
+
+                }
+
+                button {
+                    margin: 1.5rem auto 0;
+                    margin-top: 1rem;
+                    width: 30%;
+                    height: 6%;
+                    font-size: 0.7em;
+                }
+
+                .success {
+                    margin-top: 2em;
+                    font-size: 0.7em;
+
+                }
+            }
+
+        }
+
+
+        .message {
+            height: 35%;
+            width: 80%;
+            font-size: 0.7em;
+
+        }
+    }
+
+    //Smaller desktop
+    @media (min-width: 1024px) and (max-width: 1280px) {
+
+        .contact.collapsed {
+            display: block; // Turn the .skills into a flex container
+            height: 100%;
+        }
+
+        .contact.collapsed .inputs {
+            display: flex; // Hide the content
+        }
+
+  
+
+        .contact {
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+
+
+
+            h1 {
+                font-size: 3.5em;
+                margin-bottom: 2rem; // Add some space below the title
+            }
+        }
+
+        .inputs {
+
+            padding: 1rem;
+            width: 60%;
+            font-size: 1.4em;
+
+            .form {
+                height: 70vh;
+
+                input {
+                    width: 70%;
+                    padding: 0.6em;
+                    font-size: 0.7em;
+
+
+                }
+
+                button {
+                    margin: 1.5rem auto 0;
+                    margin-top: 1rem;
+                    width: 30%;
+                    height: 6%;
+                    font-size: 0.7em;
+                }
+
+                .success {
+                    margin-top: 1em;
+                    font-size: 0.7em;
+
+                }
+            }
+
+        }
+
+
+        .message {
+            height: 35%;
+            width: 70%;
+            font-size: 0.7em;
+
+        }
+    }
+
+
+    //Normal Desktop
+    @media (min-width: 1281px) {
+
+        .contact.collapsed {
+            display: block; // Turn the .skills into a flex container
+            height: 100%;
+        }
+
+        .contact.collapsed .inputs {
+            display: flex; // Hide the content
+        }
+
 
 
         .contact {
-            height: 100vh;   
-            min-height: unset; // Override the min-height
-            transition: height 0.3s ease; // Add a transition for smooth collapsing
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+
+
+            h1 {
+                font-size: 3.5em;
+                margin-bottom: 2rem; // Add some space below the title
+            }
+
         }
-      
-        .contact.collapsed {
-            height: 15%; // Adjust this value to fit the "Projects" title
-            display: flex;              // Turn the .skills into a flex container
-            align-items: center;       // Vertically center the content
-            justify-content: center;   // Horizontally center the content
+
+        .inputs {
+
+            padding: 1rem;
+            width: 50%;
+            font-size: 1.4em;
+
+            .form {
+                height: 70vh;
+
+                input {
+                    width: 70%;
+                    padding: 0.6em;
+                    font-size: 0.7em;
+
+
+                }
+
+                button {
+                    margin: 1.5rem auto 0;
+                    margin-top: 1rem;
+                    width: 20%;
+                    height: 6%;
+                    font-size: 0.7em;
+                }
+
+                .success {
+                    margin-top: 1em;
+                    font-size: 0.7em;
+
+                }
+            }
+
         }
-      
-        .contact.collapsed .inputs {
-            display: none; // Hide the content
-        }
-      
-}
 
-@media(max-width:390px) {
-    .contact {
-        height: 100vh;   
 
-    }
+        .message {
+            height: 35%;
+            width: 70%;
+            font-size: 0.7em;
 
-    .contact h1 {
-        font-size: 44px;
-    }
-    
-    .inputs{
-        width: 100%;
-        font-size: 12px;
-        padding: 1.2rem;
-        height: 85%;
-        
-
-        input{
-            padding: 15px;
-            font-size: 12px;
         }
     }
-
-    label{
-
-        font-size: 14px;
-        padding: 6px;
-
-    }
-    .message{
-        font-size: 12px;
-        height: 40%;
-        margin-bottom: 12px;
-
-
-    }
-
-    button {
-
-        margin-top: 0.1rem;
-        font-size: 12px;
-        width: 40%;
-
-      }
-
-    
-
-}

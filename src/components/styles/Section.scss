@@ -72,7 +72,24 @@
 
 
     //Small Mobile
-    @media (max-width: 480px) {
+    @media (max-width: 375px) {
+
+            
+      .section__content {
+        line-height: 1.6em;
+      
+        h1 {
+          font-size: 2.5em;
+          margin-bottom: 2.25rem;
+          
+        }
+      
+        p {
+          padding: 0.5em;
+          margin-block: 0.5em;
+          font-size: 0.9em;
+        }
+      }
 
 
     }

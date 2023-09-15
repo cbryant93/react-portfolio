@@ -60,19 +60,20 @@ function Projects({ isOpen, onToggle }) {
     }
   };
 
-  const toggleSection = () => {
-    
+  const handleToggle = () => {
+    // Check if the window width is more than 1280px (desktop mode)
     if (window.innerWidth > 1024) {
       return; // Early return, no further code will be executed.
     }
-    onToggle();
-    
-    if (!isOpen) {
-      setTimeout(() => {
-        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+
+    onToggle(); // Call the function passed from App to handle state change
+
+    if (!isOpen) { // If the section was closed
+      setTimeout(() => { // Wait for the transition to complete
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
+      }, 300); // 300ms is the duration of your transition
     }
-  };
+};
 
 
 
@@ -88,7 +89,7 @@ function Projects({ isOpen, onToggle }) {
 
   return (
     <div ref={projectsRef} className={`projects ${isOpen ? '' : 'collapsed'}`} id="Projects">
-      <h1 className='project-title' onClick={toggleSection}>Projects</h1>
+      <h1 className='project-title' onClick={handleToggle}>Projects</h1>
       {popups.map((contentObj, index) => (
         <Popup key={index} contentObj={contentObj} onClose={() => handleClose(index)} />
       ))}

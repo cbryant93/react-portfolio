@@ -30,6 +30,7 @@ const Header = ({ onSectionClick, onSkillsClick, onProjectsClick, onContactClick
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   
 
   return (

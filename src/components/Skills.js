@@ -28,8 +28,8 @@ const Skills = ({ isOpen, onToggle }) => {
   return (
     <div ref={skillsRef} className={`skills ${isOpen ? '' : 'collapsed'}`} id="Skills">
       <div className="skill__container">
+      <h1 onClick={handleToggle}>Skills</h1>
         <div className="skill__content">
-          <h1 onClick={handleToggle}>Skills</h1>
                 <p>Experience in frontend and backend development</p>
                 <p>Web Development</p>
                 <p>Java </p>
