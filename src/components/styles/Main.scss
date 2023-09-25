@@ -76,11 +76,11 @@
 
 
     .main__img {
-        clip-path: circle(35% at 50% 50%);
+        clip-path: circle(45% at 50% 50%);
         cursor: pointer;
-        width: 110%;
+        width: 100%;
         /* Changed to percentage for responsiveness */
-        max-width: 500px;
+        max-width: 250px;
         /* Set a maximum width so the image doesn't become too large on wide screens */
         height: auto;
         /* Allow the height to adjust automatically based on the width, maintaining aspect ratio */

@@ -176,7 +176,7 @@
     .popup-content {
       position: relative;
       background-color: #fff;
-      padding: 1em;
+      padding: 0.45em;
       border-radius: 5vh;
       box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
       display: flex;
@@ -233,8 +233,7 @@
       align-items: center;
       /* Center children horizontally */
       padding: 0.1em;
-
-      padding-top: 1.5em;
+      padding-bottom: 0.5em ;
 
 
 
@@ -316,6 +315,33 @@
 
 
       }
+
+
+    .project-div {
+      line-height: 0.7em;
+
+      padding: 0.1em;
+
+      padding-top: 0.5em;
+      padding-bottom: 0.4em;
+
+
+
+      h3 {
+        font-size: 0.6em;
+      }
+
+      p {
+
+        font-size: 0.3em;
+      }
+
+      span{
+        padding: 0.35em;
+      }
+
+
+    }
 
     }
 
@@ -404,11 +430,11 @@
         }
 
         .close-button {
-          top: 0.5em;
-          right: 1.4em;
-          width: 1.5em;
-          height: 1.5em;
-
+          top: 1.6em;
+          right: 2.4em;
+          width: 2em;
+          height: 2em;
+          font-size: 1em;
         }
 
       }
@@ -416,20 +442,22 @@
       .project-div {
         line-height: 0.7em;
         padding: 0.2em;
-        padding-top: 1.5em;
+        padding-bottom: 1em;
+
 
 
 
         h3 {
           text-align: center;
           /* Horizontally center the text */
-          font-size: 0.8em;
+          font-size: 1em;
+          margin-bottom: 0.4em;
         }
 
         p {
           text-align: center;
           /* Horizontally center the text */
-          font-size: 0.41em;
+          font-size: 0.5em;
         }
 
       }
@@ -532,10 +560,11 @@
         }
 
         .close-button {
-          top: 0.5em;
-          right: 1.4em;
-          width: 1.5em;
-          height: 1.5em;
+          top: 1.6em;
+          right: 2.4em;
+          width: 2em;
+          height: 2em;
+          font-size: 1em;
 
         }
 
@@ -544,20 +573,19 @@
       .project-div {
         line-height: 0.7em;
         padding: 0.2em;
-        padding-top: 1.5em;
-
+        padding-bottom: 2em;
 
 
         h3 {
           text-align: center;
           /* Horizontally center the text */
-          font-size: 0.8em;
+          font-size: 1em;
         }
 
         p {
           text-align: center;
           /* Horizontally center the text */
-          font-size: 0.41em;
+          font-size: 0.6em;
         }
 
       }
@@ -574,6 +602,7 @@
           display: inline-block;
           vertical-align: middle;
           margin-top: 0.3em;
+          font-size: 0.8em;
 
         }
 
@@ -589,7 +618,7 @@
       .projects {
         width: 100%;
         padding: 2rem;
-        height: 100vh;
+        height: 80vh;
 
         .project-title {
 
@@ -604,7 +633,7 @@
         }
 
         &.collapsed {
-          height: auto;
+          height: 95vh;
           display: block;
         }
 
@@ -669,7 +698,7 @@
         }
 
         .close-button {
-          top: 1.5em;
+          top: 0.8em;
           right: 2em;
           width: 2em;
           height: 2em;
@@ -701,7 +730,7 @@
         p {
           text-align: justify;
           /* Horizontally center the text */
-          font-size: 0.45em;
+          font-size: 0.4em;
           line-height: 1.25em;
 
         }
@@ -736,7 +765,8 @@
         a {
           display: inline-block;
           vertical-align: middle;
-          margin-top: 2.2em;
+          margin-top: 3.3em;
+          font-size: 0.6em;
 
         }
 
@@ -759,6 +789,7 @@
           flex: 1; // Split the width equally.
           padding: 10px; // Add some spacing if needed.
           box-sizing: border-box; // Ensure padding is included in width.
+          padding-top: 1em;
         }
 
         .github-link {
@@ -800,7 +831,7 @@
 
 
         &.collapsed {
-          height: auto;
+          height: 100vh;
           display: block;
         }
 
@@ -826,7 +857,7 @@
         .box {
           height: 35vh;
           /* Same as the new height above */
-          font-size: 2.5em;
+          font-size: 1.7em;
 
           flex: 0 0 calc(40% - 20px); // This sets the width to be 40% of the container minus the margin
           margin-right: 20px;
@@ -891,14 +922,14 @@
           /* Horizontally center the text */
           font-size: 1em;
           padding-bottom: 0.7em;
-          line-height: 0.9;
+          line-height: 1em;
         }
 
         p {
           text-align: justify;
           /* Horizontally center the text */
-          font-size: 0.45em;
-          line-height: 1.25em;
+          font-size: 0.41em;
+          line-height: 1.5em;
 
         }
 
@@ -933,6 +964,7 @@
           display: inline-block;
           vertical-align: middle;
           margin-top: 2.2em;
+          font-size: 0.6em;
 
         }
 
@@ -953,7 +985,7 @@
         .project-div,
         .game-content {
           flex: 1; // Split the width equally.
-          padding: 10px; // Add some spacing if needed.
+          padding: 1em; // Add some spacing if needed.
           box-sizing: border-box; // Ensure padding is included in width.
         }
 

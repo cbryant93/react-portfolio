@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import './styles/Section.scss';
-import chris from './assets/me2.JPG';
+import chris from './assets/chris2.jpeg';
 
 const Section = ({ isOpen, onToggle }) => {
   const sectionRef = useRef(null);

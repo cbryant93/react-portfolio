@@ -133,8 +133,8 @@ function Projects({ isOpen, onToggle }) {
                   </div>
                   <div className='github-link'>
                     <p>
-                      <span>This project is a updated version using React</span>
-                      <span>Github Link for original project:</span>
+                      <span>This project is an updated version using React.</span>
+                      <span> Visit the Github Link for original project:</span>
                     </p>
 
                     <a href="https://github.com/cbryant93/sparta-core-project-1">

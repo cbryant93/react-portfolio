@@ -1,0 +1,338 @@
+    // Base style for mobile
+
+    .gameSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        /* Ensure no padding */
+        box-sizing: border-box;
+        /* Ensure padding and border are included in the element's total width and height */
+        width: 88vw;
+        /* Full viewport width */
+        height: 70%;
+        /* Full viewport height */
+      }
+      
+      .background {
+        width: 85vw;
+        /* Full viewport width */
+        height: 70%;
+        /* Full viewport height */
+        background-image: url(../assets/game/view2.jpg);
+        background-size: cover;
+        box-sizing: border-box;
+        /* Ensure padding and border are included in the element's total width and height */
+      }
+      
+      
+      
+      
+      .game-title {
+        
+        padding-bottom: 18px;
+
+        h1 {
+          font-size: 32px;
+          color: yellow;
+          text-align: center;
+        }
+      }
+      
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../assets/game/background.png);
+        background-size: cover;
+        border: 5px solid black;
+        margin: auto;
+        overflow: hidden;
+        /* change from visible to hidden */
+        position: relative;
+
+        width: 90%;
+        cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
+        touch-action: manipulation;
+        height: 60vh;
+      }
+      
+      .gameStats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 10%;
+        font-weight: bold;
+        color: red;
+        position: static;
+        top: 0;
+        left: 0;
+        text-align: center;
+        background-color: black;
+
+        width: 90%;
+
+        padding: 8px;
+        font-size: 13px;
+
+        p{
+            margin-bottom: 22px;
+        }
+      }
+
+      .target {
+        cursor: pointer;
+      }
+      
+      .gameStats div {
+        flex-grow: 1;
+        padding-top: 28px;
+      }
+      
+      .gameButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+         
+        .btn {
+          width: 100% ;
+          /* Adjust as necessary */
+          margin: 10px 0;
+          /* Gives 10px vertical space between buttons */
+        }
+      }
+      
+      .startButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+      
+      }
+      
+      @keyframes moveDuck {
+        0% {
+          transform: translateX(0) translateY(0);
+        }
+      
+        25% {
+          transform: translateX(25vw) translateY(-5vh);
+        }
+      
+        50% {
+          transform: translateX(50vw) translateY(0);
+        }
+      
+        75% {
+          transform: translateX(75vw) translateY(5vh);
+        }
+      
+        100% {
+          transform: translateX(100vw) translateY(0);
+      
+        }
+      }
+      
+      .duck {
+        z-index: 10;
+        background: url('../assets/game/duck.png');
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        transition: top 1s ease-in-out;
+
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 1.75s;
+        /* Adjust this based on desired speed */
+        background-repeat: no-repeat;
+        width: 80px;  
+        height: 60px; 
+      }
+      
+      
+      .carrot {
+        /* carrot target */
+        width: 70px;
+        height: 70px;
+        z-index: 10;
+        background: url('../assets/game/carrot.png');
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        margin: 2px;
+        /* Adjust this based on desired speed */
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        transition: top 1s ease-in-out;
+
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 2s;
+        /* Adjust this based on desired speed */
+        background-repeat: no-repeat;
+
+      }
+      
+      .meat {
+        /* meat target */
+        z-index: 10;
+        background: url('../assets/game/meat.png');
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        margin: 2px;
+
+        /* Adjust this based on desired speed */
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        transition: top 1s ease-in-out;
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 1.5s;
+        /* Adjust this based on desired speed */
+        animation-fill-mode: forwards;
+        background-repeat: no-repeat;
+        width: 80px;  
+        height: 60px; 
+      }
+      
+      .instructions {
+
+        background: rgb(0, 175, 185);
+        justify-content: space-evenly;
+        text-align: center;
+        color: black;
+        border-radius: 5%;
+        position: absolute;
+        border: black solid 3px;
+
+        height: 85%;
+        width: 85%;
+        padding: 30px;
+      }
+      
+      .instructions p {
+        color: black;
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      
+      .instructions h2 {
+        color: black;
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+      
+      .instructions button {
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 30px;
+
+        width: 120px;
+        height: 35px;
+      }
+      
+      .gameover {
+
+        height: 80%;
+        width: 80%;
+    
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: rgb(0, 175, 185);
+        text-align: center;
+        color: black;
+        border-radius: 5%;
+        position: absolute;
+        border: black solid 3px;
+        opacity: 0.8;
+    
+        h2{
+          font-size: 24px;
+          color: black;
+        }
+    
+        h3{
+          font-size: 16px;
+        }
+    
+        p{
+          font-size: 14px;
+          color: black;
+        }
+    
+        .btn{
+          width: 120px;
+          height: 35px;
+          border-radius: 10px;
+          font-weight: bold;
+          font-size: 20px;
+          margin-top: 30px;
+        }
+    
+      }
+      
+      .scoreSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+      
+
+
+
+    //Small Mobile
+    @media (max-width: 375px) {
+
+
+    }
+
+    //Tablet Portrait
+
+    @media (min-width: 481px) and (max-width: 768px) {
+
+        //Tablet Portrait
+
+    }
+
+    //Tablet Landscape
+    @media (min-width: 769px) and (max-width: 1023px) {
+
+
+    }
+
+    //Smaller desktop
+    @media (min-width: 1024px) and (max-width: 1280px) {
+
+
+    }
+
+  
+  
+    
+
+    //Normal Desktop
+    @media (min-width: 1281px) {
+
+
+    }
+
+
+
+    

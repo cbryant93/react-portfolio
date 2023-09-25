@@ -1,417 +1,1026 @@
-.gameSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60vw;
-  /* Full viewport width */
-  height: 85vh;
-  /* Full viewport height */
-  margin: 0;
-  padding: 0;
-  /* Ensure no padding */
-  box-sizing: border-box;
-  /* Ensure padding and border are included in the element's total width and height */
-  margin-top: 18px;
-  margin-right: 60px;
-}
+    // Base style for mobile
 
-.background {
-  width: 60vw;
-  /* Full viewport width */
-  height: 85vh;
-  /* Full viewport height */
-  background-image: url(../assets/game/view2.jpg);
-  background-size: cover;
-  box-sizing: border-box;
-  /* Ensure padding and border are included in the element's total width and height */
-}
-
-
-
-
-.game-title h1 {
-  color: yellow;
-  font-size: 40px;
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(../assets/game/background.png);
-  background-size: cover;
-  width: 75%;
-  height: 70vh;
-  border: 5px solid black;
-  margin: auto;
-  overflow: hidden;
-  /* change from visible to hidden */
-  position: relative;
-  cursor: url('../assets/game/aim.png'), pointer;
-}
-
-.gameStats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 10%;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  position: static;
-  top: 0;
-  left: 0;
-  text-align: center;
-  background-color: black;
-}
-
-.gameStats div {
-  flex-grow: 1;
-  padding-top: 28px;
-}
-
-.gameButtons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-
-
-  .btn {
-    width: 100% ;
-    /* Adjust as necessary */
-    margin: 10px 0;
-    /* Gives 10px vertical space between buttons */
-  }
-}
-
-.startButtons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  text-align: center;
-
-}
-
-@keyframes moveDuck {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-
-  25% {
-    transform: translateX(25vw) translateY(-5vh);
-  }
-
-  50% {
-    transform: translateX(50vw) translateY(0);
-  }
-
-  75% {
-    transform: translateX(75vw) translateY(5vh);
-  }
-
-  100% {
-    transform: translateX(100vw) translateY(0);
-
-  }
-}
-
-.duck {
-  width: 110px;
-  height: 80px;
-  z-index: 10;
-  background: url('../assets/game/duck.png');
-  background-position: center;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  // margin: 2px;
-  animation: moveDuck 4.5s linear infinite;
-  animation-duration: 3s;
-  /* Adjust this based on desired speed */
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
-}
-
-
-.carrot {
-  /* carrot target */
-  width: 70px;
-  height: 70px;
-  z-index: 10;
-  background: url('../assets/game/carrot.png');
-  background-position: center;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  margin: 2px;
-  animation: moveDuck 6.5s linear infinite;
-  animation-duration: 5s;
-  /* Adjust this based on desired speed */
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
-}
-
-.meat {
-  /* meat target */
-  width: 70px;
-  height: 70px;
-  z-index: 10;
-  background: url('../assets/game/meat.png');
-  background-position: center;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  margin: 2px;
-  animation: moveDuck 3.5s linear infinite;
-  animation-duration: 3s;
-  /* Adjust this based on desired speed */
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  transition: top 1s ease-in-out;
-}
-
-.instructions {
-  height: 70%;
-  width: 75%;
-  background: rgb(0, 175, 185);
-  padding: 40px;
-  justify-content: space-evenly;
-  text-align: center;
-  color: black;
-  border-radius: 5%;
-  position: absolute;
-  border: black solid 3px;
-}
-
-.instructions p {
-  color: black;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.instructions h2 {
-  color: black;
-  font-size: 22px;
-  margin-bottom: 30px;
-}
-
-.instructions button {
-  width: 180px;
-  height: 60px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 30px;
-}
-
-.gameover {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 60%;
-  width: 60%;
-  background: rgb(0, 175, 185);
-  padding: 10px;
-  text-align: center;
-  color: black;
-  border-radius: 5%;
-  position: absolute;
-  border: black solid 3px;
-  opacity: 0.8;
-}
-
-.scoreSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.gameover h2 {
-  color: black;
-  font-size: 40px;
-}
-
-.gameover h3 {
-  color: black;
-  font-size: 28px;
-}
-
-.gameover p {
-  color: black;
-  font-size: 24px;
-}
-
-.gameover button {
-  width: 180px;
-  height: 60px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 30px;
-}
-
-@media (max-width: 840px) {
-
-
-  .gameSection {
-    margin-bottom: 20px;
-    width: 88vw;
-    /* Full viewport width */
-    height: 82vh;
-    /* Full viewport height */
-  }
-
-
-  .background {
-    width: 85vw;
-    /* Full viewport width */
-    height: 75vh;
-    /* Full viewport height */
-  }
-
-
-  .game-title {
-    padding-bottom: 18px;
-
-    h1 {
-      font-size: 32px;
+    .gameSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      /* Ensure no padding */
+      box-sizing: border-box;
+      /* Ensure padding and border are included in the element's total width and height */
+      width: 88vw;
+      /* Full viewport width */
+      height: 70%;
+      /* Full viewport height */
+      padding-right: 0.2em;
     }
-  }
+    
+    .background {
+      width: 85vw;
+      /* Full viewport width */
+      height: 70%;
+      /* Full viewport height */
+      background-image: url(../assets/game/view2.jpg);
+      background-size: cover;
+      box-sizing: border-box;
+      /* Ensure padding and border are included in the element's total width and height */
+    }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../assets/game/background.png);
+      background-size: cover;
+      border: 0.1em solid black;
+      margin: auto;
+      overflow: hidden;
+      /* change from visible to hidden */
+      position: relative;
 
-  .container {
-    width: 90%;
-    cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
-    touch-action: manipulation;
-    height: 60vh;
-  }
-
-  .target {
-    cursor: pointer;
-  }
-
-  .gameStats {
-
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-
-    height: 10%;
-    padding: 8px;
-    font-size: 13px;
-    align-items: center;
-    /* It's already there, just ensuring */
-    p{
-      margin-bottom: 22px;
+      width: 90%;
+      cursor: url('../assets/game/aim.png') 50% 50% / 50% 50%, pointer;
+      touch-action: manipulation;
+      height: 55vh;
+    }
+    
+    
+    
+    .game-title {
       
+      padding-bottom: 0.6em;
+
+      h1 {
+        font-size: 32px;
+        color: yellow;
+        text-align: center;
+      }
     }
+    
+
+    .gameStats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: bold;
+      color: red;
+      position: static;
+      top: 0;
+      left: 0;
+      text-align: center;
+      background-color: black;
+      width: 90%;
+      padding: 0.3em;
+      font-size: 0.35em;
+
+      p{
+          margin-bottom: 0.6em;
+          font-size: 1.1em;
+      }
+    }
+
+
+    .target {
+      cursor: pointer;
+    }
+    
+    .gameStats div {
+      flex-grow: 1;
+      padding-top: 0.5em;
+    }
+    
+    .gameButtons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+ 
+       
+      .btn {
+        width: 100% ;
+        /* Adjust as necessary */
+        margin: 0.4em 0;
+        /* Gives 10px vertical space between buttons */
+      }
+    }
+    
+    .startButtons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      text-align: center;
+
+      button{
+
+      background-color: rgb(240, 113, 103);
+      border: none;
+      padding: 1em 1.5em;
+      cursor: pointer;
+      font-size: 0.35em;
+      border-radius: 0.8em;
+      color: white;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+  
+    
+    }
+  }
+    
+    @keyframes moveDuck {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+    
+      25% {
+        transform: translateX(25vw) translateY(-5vh);
+      }
+    
+      50% {
+        transform: translateX(50vw) translateY(0);
+      }
+    
+      75% {
+        transform: translateX(75vw) translateY(5vh);
+      }
+    
+      100% {
+        transform: translateX(100vw) translateY(0);
+    
+      }
+    }
+    
+    .duck {
+      z-index: 10;
+      background: url('../assets/game/duck.png');
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      transition: top 1s ease-in-out;
+
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.75s;
+      /* Adjust this based on desired speed */
+      background-repeat: no-repeat;
+      width: 80px;  
+      height: 60px; 
+    }
+    
+    
+    .carrot {
+      /* carrot target */
+      width: 70px;
+      height: 70px;
+      z-index: 10;
+      background: url('../assets/game/carrot.png');
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      margin: 2px;
+      /* Adjust this based on desired speed */
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      transition: top 1s ease-in-out;
+
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 2s;
+      /* Adjust this based on desired speed */
+      background-repeat: no-repeat;
+
+    }
+    
+    .meat {
+      /* meat target */
+      z-index: 10;
+      background: url('../assets/game/meat.png');
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      margin: 2px;
+
+      /* Adjust this based on desired speed */
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      transition: top 1s ease-in-out;
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.5s;
+      /* Adjust this based on desired speed */
+      animation-fill-mode: forwards;
+      background-repeat: no-repeat;
+      width: 80px;  
+      height: 60px; 
+    }
+    
+    .instructions {
+
+      background: rgb(0, 175, 185);
+      justify-content: space-evenly;
+      text-align: center;
+      color: black;
+      border-radius: 5%;
+      position: absolute;
+      border: black solid 3px;
+
+      height: 85%;
+      width: 85%;
+      padding: 0.5em;
+    }
+    
+    .instructions p {
+      color: black;
+      font-size: 0.4em;
+      margin-bottom: 0.1em;
+    }
+    
+    .instructions h2 {
+      color: black;
+      font-size: 0.7em;
+      margin-bottom: 0.8em;
+    }
+    
+    .instructions button {
+      border-radius: 0.5em;
+      font-weight: bold;
+      font-size: 0.65em;
+      margin-top: 1em;
+      width: 50%;
+      height: 10%;
+    }
+    
+    .gameover {
+
+      height: 70%;
+      width: 80%;
+  
+      padding: 0.2em;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background: rgb(0, 175, 185);
+      text-align: center;
+      color: black;
+      border-radius: 5%;
+      position: absolute;
+      border: black solid 3px;
+      opacity: 0.8;
+  
+      h2{
+        font-size: 0.7em;
+        color: black;
+      }
+  
+      h3{
+        font-size: 0.5em;
+      }
+  
+      p{
+        font-size: 0.5em;
+        color: black;
+      }
+  
+      .btn{
+        width: 50%;
+        height: 10%;
+        border-radius: 0.5em;
+        font-size: 0.65em;
+        margin-top: 0.4em;
+        font-weight: bold;
+      }
+  
+    }
+    
+    .scoreSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+    
+
+
+
+  //Small Mobile
+  @media (max-width: 375px) {
+
+    .gameSection {
+
+      width: 88vw;
+      height: 600%;
+
+    }
+    
+    .background {
+      width: 85vw;
+      height: 600%;
+    }
+
+    .container {
+
+      width: 90%;
+      height: 50vh;
+    }
+
+    .game-title {
+      
+      padding-bottom: 0.6em;
+
+      h1 {
+        font-size: 0.8em;
+      }
+    }
+
+    .instructions {
+      padding: 0.5em;
+    }
+    
+    .instructions p {
+      font-size: 0.35em;
+      margin-bottom: 0.1em;
+    }
+    
+    .instructions h2 {
+      font-size: 0.6em;
+      margin-bottom: 0.5em;
+    }
+    
+    .instructions button {
+      border-radius: 0.5em;
+      font-size: 0.55em;
+      margin-top: 0.8em;
+
+    }
+
+    .gameover {
+
+      height: 80%;
+      width: 80%;
+      padding: 0.2em;
+  
+      h2{
+        font-size: 0.6em;
+      }
+  
+      h3{
+        font-size: 0.5em;
+      }
+  
+      p{
+        font-size: 0.45em;
+      }
+  
+      .btn{
+        font-size: 0.55em;
+        margin-top: 30px;
+      }
+  
+    }
+
+    .duck {
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.75s;
+      width: 70px;  
+      height: 50px; 
+    }
+    
+    
+    .carrot {
+      /* carrot target */
+      width: 60px;
+      height: 60px;
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 2s;
+
+    }
+    
+    .meat {
+
+
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.5s;
+      width: 70px;  
+      height: 50px; 
+    }
+
 
   }
 
-  .instructions {
+  //Tablet Portrait
 
-    height: 85%;
-    width: 85%;
-    background: rgb(0, 175, 185);
-    padding: 30px;
-    justify-content: space-evenly;
-    text-align: center;
-    color: black;
-    border-radius: 5%;
-    position: absolute;
-    border: black solid 3px;
+  @media (min-width: 481px) and (max-width: 768px) {
 
-    p {
+      //Tablet Portrait
+      .gameSection {
 
-      font-size: 12px;
-      margin-bottom: 2px;
+        width: 88vw;
+        height: 70%;
+  
+      }
+      
+      .background {
+        width: 85vw;
+        height: 70%;
+      }
+  
+      .container {
+  
+        width: 90%;
+        height: 55vh;
+      }
+  
+      .game-title {
+        
+        padding-bottom: 0.6em;
+  
+        h1 {
+          font-size: 1.4em;
+        }
+      }
+
+      .gameStats {
+        width: 90%;
+        padding: 0.3em;
+        font-size: 0.5em;
+  
+        p{
+            margin-bottom: 0.6em;
+   
+        }
+      }
+  
+      .instructions {
+        padding: 0.5em;
+      }
+      
+      .instructions p {
+        font-size: 0.6em;
+        margin-bottom: 0.1em;
+      }
+      
+      .instructions h2 {
+        font-size: 1em;
+        margin-bottom: 0.8em;
+      }
+      
+      .instructions button {
+        border-radius: 0.5em;
+        font-size: 0.7em;
+        margin-top: 2em;
+        width: 30%;
+  
+      }
+  
+      .gameover {
+  
+        height: 60%;
+        width: 70%;
+        padding: 0.2em;
+    
+        h2{
+          font-size: 0.8em;
+        }
+    
+        h3{
+          font-size: 0.6em;
+        }
+    
+        p{
+          font-size: 0.55em;
+        }
+    
+        .btn{
+          font-size: 0.5em;
+          margin-top: 1em;
+          width: 40%;
+        }
+    
+      }
+
+          
+    .gameButtons {
+    
+      .btn {
+        width: 45% ;
+        /* Adjust as necessary */
+
+        font-size: 0.65em;
+      }
     }
+  
+      .duck {
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 1.75s;
+        width: 90px;  
+        height: 70px; 
+      }
+      
+      
+      .carrot {
+        /* carrot target */
+        width: 80px;
+        height: 80px;
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 2s;
+  
+      }
+      
+      .meat {
+  
+  
+        animation: moveDuck 4.5s linear infinite;
+        animation-duration: 1.5s;
+        width: 90px;  
+        height: 70px; 
+      }
 
-    button {
-      width: 120px;
-      height: 35px;
-    }
+      .startButtons {
+        width: 10em;
+        button{
+
+          font-size: 0.45em;
+          border-radius: 0.8em;
+        
+        }
+    
+      
+      }
 
   }
 
-  .gameover {
+  //Tablet Landscape
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .gameSection {
 
-    height: 80%;
-    width: 80%;
+      width: 88vw;
+      height: 75%;
 
-    padding: 10px;
-
-    h2{
-      font-size: 24px;
+    }
+    
+    .background {
+      width: 85vw;
+      height: 75%;
     }
 
-    h3{
-      font-size: 16px;
+    .container {
+
+      width: 90%;
+      height: 55vh;
     }
 
-    p{
-      font-size: 14px;
+    .game-title {
+      
+      padding-bottom: 0.8em;
+
+      h1 {
+        font-size: 1.6em;
+      }
     }
 
-    .btn{
-      width: 120px;
-      height: 35px;
+    .gameStats {
+      width: 90%;
+      padding: 0.3em;
+      font-size: 0.5em;
+
+      p{
+          margin-bottom: 0.6em;
+ 
+      }
     }
+
+    .instructions {
+      padding: 0.5em;
+    }
+    
+    .instructions p {
+      font-size: 0.6em;
+      margin-bottom: 0.1em;
+    }
+    
+    .instructions h2 {
+      font-size: 1em;
+      margin-bottom: 0.8em;
+    }
+    
+    .instructions button {
+      border-radius: 0.5em;
+      font-size: 0.7em;
+      margin-top: 2em;
+      width: 30%;
+
+    }
+
+    .gameover {
+
+      height: 60%;
+      width: 70%;
+      padding: 0.2em;
+  
+      h2{
+        font-size: 0.8em;
+      }
+  
+      h3{
+        font-size: 0.6em;
+      }
+  
+      p{
+        font-size: 0.55em;
+      }
+  
+      .btn{
+        font-size: 0.5em;
+        margin-top: 1em;
+        width: 40%;
+      }
+  
+    }
+
+        
+  .gameButtons {
+  
+    .btn {
+      width: 45% ;
+      /* Adjust as necessary */
+
+      font-size: 0.6em;
+    }
+  }
+
+    .duck {
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.75s;
+      width: 90px;  
+      height: 70px; 
+    }
+    
+    
+    .carrot {
+      /* carrot target */
+      width: 80px;
+      height: 80px;
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 2s;
+
+    }
+    
+    .meat {
+
+
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 1.5s;
+      width: 90px;  
+      height: 70px; 
+    }
+
+    .startButtons {
+      width: 10em;
+
+      button{
+
+        padding: 1em 1.5em;
+        font-size: 0.45em;
+        border-radius: 0.8em;
+
+      }
+  
+    
+    }
+
 
   }
 
-  .duck {
-    animation: moveDuck 4.5s linear infinite;
-    animation-duration: 1.75s;
-    /* Adjust this based on desired speed */
-    animation-fill-mode: forwards;
-    transition: top 1s ease-in-out;
-    background-repeat: no-repeat;
-    width: 80px;  
-    height: 60px; 
+  //Smaller desktop
+  @media (min-width: 1024px) and (max-width: 1280px) {
+
+    .gameSection {
+
+      width: 60vw;
+      /* Full viewport width */
+      height: 85vh;
+      /* Full viewport height */
+      padding-right: 0.2em;
+    }
+
+    .background {
+
+      width: 60vw;
+      /* Full viewport width */
+      height: 85vh;
+      /* Full viewport height */
+
+    }
+
+    .container {
+
+      width: 80%;
+      height: 75%;
+
+    }
+
+        
+    .game-title {
+      
+      padding-bottom: 0.6em;
+
+      h1 {
+        font-size: 1.7em;
+
+      }
+    }
+
+
+    .gameStats {
+
+      width: 80%;
+      padding: 0.3em;
+      font-size: 0.45em;
+      height: 10%;
+
+      p{
+          margin-bottom: 0.6em;
+          font-size: 1.1em;
+      }
+    }
+
+    .gameStats div {
+      padding-top: 0.5em;
+    }
+    
+    .gameButtons {
+
+      gap: 10px;
+       
+      .btn {
+        width: 100% ;
+        /* Adjust as necessary */
+        margin: 0.4em 0;
+        /* Gives 10px vertical space between buttons */
+      }
+    }
+
+    .startButtons {
+      gap: 5px;
+
+    }
+
+    .duck {
+      width: 110px;
+      height: 80px;
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 3s;
+    }
+    
+    
+    .carrot {
+      /* carrot target */
+      width: 70px;
+      height: 70px;
+      animation: moveDuck 6.5s linear infinite;
+      animation-duration: 5s;
+
+    }
+    
+    .meat {
+      /* meat target */
+      width: 70px;
+      height: 70px;
+      animation: moveDuck 3.5s linear infinite;
+      animation-duration: 3s;
+
+    }
+
+    .instructions {
+
+      height: 65%;
+      width: 65%;
+      padding: 0.5em;
+    }
+    
+    .instructions p {
+      font-size: 0.45em;
+      margin-bottom: 0.1em;
+    }
+    
+    .instructions h2 {
+      font-size: 0.7em;
+      margin-bottom: 0.8em;
+    }
+    
+    .instructions button {
+      border-radius: 0.5em;
+      font-size: 0.65em;
+      margin-top: 1em;
+      width: 50%;
+      height: 10%;
+    }
+    
+    .gameover {
+
+      height: 65%;
+      width: 65%;
+  
+      padding: 0.2em;
+
+      h2{
+        font-size: 0.8em;
+
+      }
+  
+      h3{
+        font-size: 0.6em;
+      }
+  
+      p{
+        font-size: 0.55em;
+
+      }
+  
+      .btn{
+        width: 35%;
+        height: 10%;
+        border-radius: 0.5em;
+        font-size: 0.65em;
+        margin-top: 0.4em;
+
+      }
+
+
   }
-
-  .carrot {
-
-    z-index: 10;
-    animation: moveDuck 4.5s linear infinite;
-    animation-duration: 2s;
-    /* Adjust this based on desired speed */
-    animation-fill-mode: forwards;
-    transition: top 1s ease-in-out;
-    background-repeat: no-repeat;
-    width: 80px;  
-    height: 60px; 
-  }
-
-  .meat {
-
-    z-index: 10;
-    animation: moveDuck 4.5s linear infinite;
-    animation-duration: 1.5s;
-    /* Adjust this based on desired speed */
-    animation-fill-mode: forwards;
-    transition: top 1s ease-in-out;
-    background-repeat: no-repeat;
-    width: 80px;  
-    height: 60px; 
-  }
-
-
-
 }
 
+
+
+  
+
+  //Normal Desktop
+  @media (min-width: 1281px) {
+
+    .gameSection {
+
+      width: 55vw;
+      /* Full viewport width */
+      height: 85vh;
+      /* Full viewport height */
+      padding-right: 0.8em;
+    }
+
+    .background {
+
+      width: 55vw;
+      /* Full viewport width */
+      height: 85vh;
+      /* Full viewport height */
+
+    }
+
+    .container {
+
+      width: 80%;
+      height: 75%;
+
+    }
+
+        
+    .game-title {
+      
+      padding-bottom: 0.6em;
+
+      h1 {
+        font-size: 1.7em;
+
+      }
+    }
+
+
+    .gameStats {
+
+      width: 80%;
+      padding: 0.3em;
+      font-size: 0.45em;
+      height: 10%;
+
+      p{
+          margin-bottom: 0.6em;
+          font-size: 1.1em;
+      }
+    }
+
+    .gameStats div {
+      padding-top: 0.5em;
+    }
+    
+    .gameButtons {
+
+      gap: 10px;
+       
+      .btn {
+        width: 100% ;
+        /* Adjust as necessary */
+        margin: 0.4em 0;
+        /* Gives 10px vertical space between buttons */
+      }
+    }
+
+    .startButtons {
+      gap: 5px;
+
+    }
+
+    .duck {
+      width: 110px;
+      height: 80px;
+      animation: moveDuck 4.5s linear infinite;
+      animation-duration: 3s;
+    }
+    
+    
+    .carrot {
+      /* carrot target */
+      width: 70px;
+      height: 70px;
+      animation: moveDuck 6.5s linear infinite;
+      animation-duration: 5s;
+
+    }
+    
+    .meat {
+      /* meat target */
+      width: 70px;
+      height: 70px;
+      animation: moveDuck 3.5s linear infinite;
+      animation-duration: 3s;
+
+    }
+
+    .instructions {
+
+      height: 65%;
+      width: 65%;
+      padding: 0.5em;
+    }
+    
+    .instructions p {
+      font-size: 0.45em;
+      margin-bottom: 0.1em;
+    }
+    
+    .instructions h2 {
+      font-size: 0.7em;
+      margin-bottom: 0.8em;
+    }
+    
+    .instructions button {
+      border-radius: 0.5em;
+      font-size: 0.65em;
+      margin-top: 1em;
+      width: 50%;
+      height: 10%;
+    }
+    
+    .gameover {
+
+      height: 70%;
+      width: 80%;
+  
+      padding: 0.2em;
+
+      h2{
+        font-size: 0.7em;
+
+      }
+  
+      h3{
+        font-size: 0.5em;
+      }
+  
+      p{
+        font-size: 0.5em;
+
+      }
+  
+      .btn{
+        width: 50%;
+        height: 10%;
+        border-radius: 0.5em;
+        font-size: 0.65em;
+        margin-top: 0.4em;
+
+      }
+
+
+  }
+
+
+  }
