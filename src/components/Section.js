@@ -18,7 +18,7 @@ const Section = ({ isOpen, onToggle }) => {
         sectionRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
       }, 300); // 300ms is the duration of your transition
     }
-};
+  };
 
 
   useEffect(() => {
@@ -36,10 +36,10 @@ const Section = ({ isOpen, onToggle }) => {
         <div className="section__content">
           <h1 onClick={handleToggle}>About Me</h1>
           <p>
-                I am a QA Engineer with 5 years experience in the industry. With a creative insight into technology, along with the ability to use a broad selection of computing skills,
-                I can bring an eclectic mix of attributes to the table due to working in a variety of roles and systems.
-                Within these roles, I have learned the importance of good communication skills and the need to build and maintain successful and meaningful relationships with co-workers, managers, and clients.
-                I have also proven this by utilizing my confident personality in my presentational skills.
+            I have six years of experience as a QA Engineer in the industry.
+            I bring a unique blend of skills to the table, thanks to my creative approach to technology and proficiency in various computing tools.
+            Throughout my career, I've worked in diverse roles and systems, which has given me a wide range of abilities.
+            In these roles, I've realized the significance of effective communication and the importance of establishing strong and valuable relationships with colleagues, managers, and clients. I've demonstrated this by leveraging my confident personality in presentations and interactions.
           </p>
         </div>
       </div>
