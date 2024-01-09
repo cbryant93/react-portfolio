@@ -35,6 +35,7 @@ const Skills = ({ isOpen, onToggle }) => {
                 <p>Java </p>
                 <p>SQL</p>
                 <p>Selenium + Cucumber</p>
+                <p>React</p>
         </div>
       </div>
     </div>

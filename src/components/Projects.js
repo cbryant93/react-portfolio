@@ -4,6 +4,7 @@ import Game from './Game';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { GitHub } from "@material-ui/icons";
+import webPic from './assets/og_website.png';
 
 const Box = React.forwardRef(({ label, color, onClick, visible }, ref) => (
   <div
@@ -102,11 +103,24 @@ function Projects({ isOpen, onToggle }) {
             label="Web Dev Project"
             color="#0081a7"
             onClick={() => handleClick(
-              <div>
-                <h1 className='popup-title'>Web project 1</h1>
-                <p>Some additional content here.</p>
-                <p>More content here if needed.</p>
-                {/* You can keep adding more content as needed. */}
+              <div className='parent-container'>
+                <div className='content-text'>
+                <h1 className='popup-title'>Behind the Scenes: Building My Portfolio Website</h1>               
+                <p>Job hunting in 2023 brought a fresh set of challenges. With five years of experience in my first tech job, 
+                  I observed significant changes in the hiring landscape.
+                   Companies hadter developed unique hiring processes, often involving tailored questions to gauge suitability.
+
+                  Two key realisations emerged. Firstly, as a Software Development Engineer in Test (SDET), 
+                  my skill set was tailored to my role at ASOS, and further diversification of skills was necessary for a broader job market. 
+                  Secondly, many applications now included a section for a personal website. 
+                  This realisation led me to embark on the journey of creating my own portfolio website.</p>
+                <p>Find out more in my blog.</p>
+                </div>
+                <div className='project-info'>
+
+                {/* <img className='project-info-image' src={webPic} alt="" /> */}
+
+                </div>
               </div>
             )}
             visible={visible}
@@ -153,14 +167,14 @@ function Projects({ isOpen, onToggle }) {
 
           <Box
             ref={el => boxRefs.current[2] = el}
-            label="Project 3"
+            label="Automation testing"
             color="#fed9b7"
             onClick={() => handleClick('Popup message 3')}
             visible={visible}
           />
           <Box
             ref={el => boxRefs.current[3] = el}
-            label="Project 4"
+            label="Coming soon..."
             color="#f07167"
             onClick={() => handleClick('Popup message 4')}
             visible={visible}

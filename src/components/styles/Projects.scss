@@ -14,7 +14,7 @@
       .project-title {
         color: rgb(40, 175, 185);
         text-transform: uppercase;
-        font-size: 3em;
+        font-size: 3em; 
         cursor: pointer;
       }
 
@@ -22,9 +22,11 @@
 
         color: rgb(40, 175, 185);
         text-transform: uppercase;
-        font-size: 1em;
+        font-size: 0.6em;
         margin-bottom: 2.125rem;
         cursor: pointer;
+        flex-shrink: 0;
+        padding-top: 1.6em;
 
       }
 
@@ -183,17 +185,19 @@
       border-radius: 5vh;
       box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       width: 90%;
       height: 95%;
       overflow: hidden;
       position: relative;
+      flex-direction: column;
+
 
       p {
         margin-bottom: 1px;
-        font-size: 0.7em;
+        font-size: 0.45em;
+        line-height: 1.6em;
       }
 
       .close-button {
@@ -215,6 +219,26 @@
       }
 
     }
+
+
+    .content-text {
+      flex: 1; /* Allow this section to grow and occupy the top half */
+      overflow: auto; /* Add scrolling if the content overflows */
+      text-align: justify;
+      padding: 0.3em;
+    }
+    
+    .content-image {
+      flex: 1; /* Allow this section to grow and occupy the bottom half */
+    }
+    
+    .content-image img {
+      width: 95%; /* Make image fill the container width */
+      height: 95%; /* Make image fill the container height */
+      object-fit: cover; /* Adjust the fit of the image */
+      padding-top: 0.5em;
+    }
+    
 
     .parent-container {
       display: flex;
@@ -245,6 +269,7 @@
         /* Horizontally center the text */
         font-size: 0.8em;
         color: #00afb9;
+        padding-top: 1.3em;
       }
 
       p {
@@ -255,6 +280,15 @@
 
       .project-info {
         display: none;
+
+        .project-info-image img{
+          width: 95%; /* Make image fill the container width */
+          height: 95%; /* Make image fill the container height */
+          object-fit: cover; /* Adjust the fit of the image */
+          padding-top: 0.5em;
+
+        }
+      
       }
 
 
@@ -310,13 +344,31 @@
 
         .popup-title {
 
-          font-size: 1em;
+          font-size: 0.5em;
           margin-bottom: 2.125rem;
 
 
         }
 
 
+      }
+
+      .popup-content {
+
+  
+        p {
+          margin-bottom: 1px;
+          font-size: 0.4em;
+        }
+  
+        .close-button {
+          top: 1.4em;
+          right: 1.4em;
+          width: 1.3em;
+          height: 1.3em;
+
+        }
+  
       }
 
 
@@ -346,6 +398,21 @@
 
     }
 
+    .content-text {
+
+      padding: 0.3em;
+    }
+    
+
+    
+    .content-image img {
+      width: 95%; /* Make image fill the container width */
+      height: 95%; /* Make image fill the container height */
+      padding-top: 0.5em;
+    }
+    
+
+
     }
 
     //Tablet Portrait
@@ -373,7 +440,7 @@
         }
 
         .popup-title {
-          font-size: 1.5em;
+          font-size: 1.2em;
           margin-bottom: 2.125rem;
 
         }
@@ -430,7 +497,7 @@
 
         p {
           margin-bottom: 1px;
-          font-size: 0.8em;
+          font-size: 0.65em;
         }
 
         .close-button {
@@ -441,6 +508,19 @@
           font-size: 1em;
         }
 
+      }
+
+      .content-text {
+
+        padding: 0.3em;
+      }
+      
+  
+      
+      .content-image img {
+        width: 90%; /* Make image fill the container width */
+        height: 90%; /* Make image fill the container height */
+        padding-top: 1em;
       }
 
       .project-div {
@@ -502,7 +582,7 @@
         }
 
         .popup-title {
-          font-size: 1.5em;
+          font-size: 1.1em;
           margin-bottom: 2.125rem;
 
         }
@@ -557,7 +637,7 @@
 
         p {
           margin-bottom: 1px;
-          font-size: 0.8em;
+          font-size: 0.75em;
         }
 
         .close-button {
@@ -569,6 +649,19 @@
 
         }
 
+      }
+
+      .content-text {
+
+        padding: 0.3em;
+      }
+      
+  
+      
+      .content-image img {
+        width: 90%; /* Make image fill the container width */
+        height: 90%; /* Make image fill the container height */
+        padding-top: 1em;
       }
 
       .project-div {
@@ -628,7 +721,7 @@
         }
 
         .popup-title {
-          font-size: 1.5em;
+          font-size: 1em;
           margin-bottom: 2.125rem;
 
         }
@@ -660,7 +753,7 @@
         .box {
           height: 35vh;
           /* Same as the new height above */
-          font-size: 2.5em;
+          font-size: 2em;
 
           flex: 0 0 calc(40% - 20px); // This sets the width to be 40% of the container minus the margin
           margin-right: 20px;
@@ -695,7 +788,8 @@
 
         p {
           margin-bottom: 1px;
-          font-size: 0.8em;
+          font-size: 0.6em;
+  
         }
 
         .close-button {
@@ -706,6 +800,21 @@
 
         }
 
+      }
+
+      .content-text {
+
+        padding: 0.6em;
+      }
+
+      .content-image {
+        padding-bottom: 1.6em;
+      }
+         
+      .content-image img {
+        width: 60%; /* Make image fill the container width */
+        height: 60%; /* Make image fill the container height */
+        padding-top: 1em;
       }
 
       .project-div {
@@ -823,7 +932,7 @@
         }
 
         .popup-title {
-          font-size: 1.5em;
+          font-size: 1.3em;
           margin-bottom: 2.125rem;
 
         }
@@ -893,7 +1002,7 @@
 
         p {
           margin-bottom: 1px;
-          font-size: 0.8em;
+          font-size: 0.6em;
         }
 
         .close-button {
@@ -904,6 +1013,21 @@
 
         }
 
+      }
+
+      .content-text {
+
+        padding: 0.6em;
+      }
+
+      .content-image {
+        padding-bottom: 1.6em;
+      }
+         
+      .content-image img {
+        width: 60%; /* Make image fill the container width */
+        height: 60%; /* Make image fill the container height */
+        padding-top: 1em;
       }
 
       .project-div {
