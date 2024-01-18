@@ -254,6 +254,7 @@
 
     .main__img {
         max-width: 350px; // Example: Increase max-width for larger screens
+       
     }
 
     .MuiSvgIcon-root.MuiSvgIcon-root {
@@ -326,6 +327,7 @@
             margin-top: 0; /* Reset the top margin for desktop */
             display: flex;
             justify-content:right;
+            height: 50vh;
     
         }
 
@@ -409,7 +411,7 @@
         margin-right: 0; /* Reset the right margin for desktop */
         margin-bottom: 0; /* Reset the bottom margin for desktop */
         text-align: left;
-        margin-right: 30%;
+    
     }
 
     .text {

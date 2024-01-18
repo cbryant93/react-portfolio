@@ -309,7 +309,7 @@
 
         .contact {
             width: 100%;
-            height: 100%;
+            height: 90%;
             padding: 2rem;
 
 
@@ -321,38 +321,35 @@
         }
 
         .inputs {
-
-            padding: 1rem;
-            width: 60%;
-            font-size: 1.4em;
-
+            width: 60%; // Slightly wider on smaller screens
+            font-size: 1.2em; // Adjust font size for readability
+    
             .form {
-                height: 70vh;
-
-                input {
-                    width: 70%;
-                    padding: 0.6em;
-                    font-size: 0.7em;
-
-
+                input, button {
+                    width: 80%; // Increase width for smaller screens
+                    padding: 0.5em; // Adjust padding for comfort
+                    font-size: 0.8em; // Slightly larger font size for readability
                 }
-
+    
                 button {
+                    margin-top: 1rem; // Adjust margin for spacing]
                     margin: 1.5rem auto 0;
-                    margin-top: 1rem;
                     width: 30%;
                     height: 6%;
                     font-size: 0.7em;
                 }
-
-                .success {
-                    margin-top: 1em;
-                    font-size: 0.7em;
-
+    
+                .success, .error {
+                    font-size: 0.6em; // Adjust font size for smaller screens
                 }
             }
-
         }
+    
+        .message {
+            width: 80%; // Adjust width for smaller screens
+            font-size: 0.6em; // Adjust font size
+        }
+    }
 
 
         .message {
@@ -361,7 +358,7 @@
             font-size: 0.7em;
 
         }
-    }
+    
 
 
     //Normal Desktop

@@ -155,13 +155,13 @@
             // Base style for mobile
 
             .sections {
-                height: 100vh; 
+                height: 100%; 
             }
 
               
               .section__container {
                 flex-direction: row;       /* Make main axis horizontal */
-                height: 90vh;
+                height: 100vh;
               }
         
               .sections.collapsed {
@@ -186,14 +186,13 @@
             }
               
               .section__content {
-                line-height: 2.2em;
+                line-height: 2em;
                 flex: 1;   /* Take up any remaining space */
                 max-width: 45%; /* Limit to half the container width */
 
               
                 h1 {
-                  font-size: 3.5em;
-                  margin-top: 3rem;
+                  font-size: 3em;
                   margin-bottom: 2.25rem;
                   order: -1; /* Place the H1 title at the top */
                   width: 100%; 
@@ -202,7 +201,7 @@
                 p {
                   padding: 0.5em;
                   margin-block: 0.5em;
-                  font-size: 1em;
+                  font-size: 0.8em;
                   display: block;
                 }
               }
@@ -210,66 +209,52 @@
 }
         
     
+//Normal Desktop
+@media (min-width: 1281px) {
+  .sections {
+      height: 100vh; 
+  }
 
+  .section__container {
+      flex-direction: row; // Main axis horizontal
+      height: 90vh; // Set the height of the container
+      align-items: stretch; // Stretch children to fill the container height
+  }
+
+  .section__img, .section__content {
+      flex: 1; // Both take up equal space
+      max-width: 50%; // Limit to half the container width
+      line-height: 2rem;
+  }
     
-
-    //Normal Desktop
-    @media (min-width: 1281px) {
-
-
-        .sections {
-            height: 100vh; 
-        }
-
-          
-          .section__container {
-            flex-direction: row;       /* Make main axis horizontal */
-            height: 90vh;
-          }
+  .section__img img {
+      max-width: 80%;
+      height: 80%; // Stretch to fill the container height
+      object-fit: cover; // Cover the container without losing aspect ratio
+  }
     
-          .sections.collapsed {
+  .section__content {
+      display: flex; // Apply flex to align items within content
+      flex-direction: column; // Arrange items vertically
+      justify-content: center; // Center content vertically
+      align-items: center; // Center content horizontally
+      text-align: center; // Center text
+      padding: 1em; // Adjust padding as needed
+  }
 
-            height: auto; 
-          }
-    
-          .sections.collapsed .section__content p {
-            display: block; // Hide the content
-          }
-    
-          .section__img {
-            flex: 1;   /* Take up any remaining space */
-            max-width: 50%; /* Limit to half the container width */
-        }
-          
-          .section__img img {
-            max-width: 100%;   /* Ensures the image never stretches beyond its container */
-            width: 100%;       /* Image will try to take full width of its container, but respects max-width */
-            height: auto;      /* Maintains the image's aspect ratio */
-            padding: 1em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */        
-        }
-          
-          .section__content {
-            line-height: 3.8em;
-            flex: 1;   /* Take up any remaining space */
-            max-width: 50%; /* Limit to half the container width */
+  .section__content h1 {
+      font-size: 3.5em;
+      margin-bottom: 2.25rem;
+      order: -1; // Place the H1 title at the top
+      width: 100%; 
+  }
 
-          
-            h1 {
-              font-size: 4em;
-          
-              margin-bottom: 2.25rem;
-              order: -1; /* Place the H1 title at the top */
-              width: 100%; 
-            }
-          
-            p {
-              padding: 0.4em;
-              margin-block: 0.5em;
-              font-size: 0.98em;
-              display: block;
-            }
-          }
-    }
+  .section__content p {
+      font-size: 0.98em;
+      display: block;
+  }
+}
+
 
 
 

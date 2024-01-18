@@ -751,11 +751,11 @@
 
 
         .box {
-          height: 35vh;
+          height: 30vh;
           /* Same as the new height above */
           font-size: 2em;
 
-          flex: 0 0 calc(40% - 20px); // This sets the width to be 40% of the container minus the margin
+          flex: 0 0 calc(45% - 120px); // This sets the width to be 40% of the container minus the margin
           margin-right: 20px;
           margin-bottom: 20px;
 
@@ -965,11 +965,11 @@
 
 
         .box {
-          height: 35vh;
+          height: 30vh;
           /* Same as the new height above */
           font-size: 1.7em;
 
-          flex: 0 0 calc(40% - 20px); // This sets the width to be 40% of the container minus the margin
+          flex: 0 0 calc(40% - 100px); // This sets the width to be 40% of the container minus the margin
           margin-right: 20px;
           margin-bottom: 20px;
 
