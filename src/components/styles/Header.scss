@@ -187,7 +187,7 @@
 
         .header {
 
-            height: 10%;
+             height: 10%;
             justify-content:left;
 
         }
@@ -195,7 +195,10 @@
         .header__logo {
     
             h1 {
-                font-size: 1.8em;
+                font-size: 1.4em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -219,6 +222,9 @@
         
                a {
                 font-size: 1.2em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                }
            }
         }
@@ -240,13 +246,14 @@
         .header {
 
             justify-content:left;
+            height: 10%;
     
         }
 
         .header__logo {
     
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
         }
 
@@ -374,3 +381,5 @@
         }
     }
 }
+
+
