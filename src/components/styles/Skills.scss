@@ -57,10 +57,6 @@
     }
     
 
-
-
-
-
     //Small Mobile
     @media (max-width: 375px) {
 
@@ -134,8 +130,8 @@
 
     }
 
-//Smaller desktop
-@media (min-width: 1024px) and (max-width: 1280px) {
+    //Smaller desktop
+    @media (min-width: 1024px) and (max-width: 1280px) {
     .skills {
     
 
@@ -165,10 +161,9 @@
             font-size: 1.1em;
         }
     }
-}
+    }
 
     
-
     //Normal Desktop
     @media (min-width: 1281px) {
 
@@ -203,6 +198,99 @@
             }
 
 
+    }
+
+    // mobile landscape
+
+    // Landscape mobile specific styles
+    @media (max-width: 768px) and (orientation: landscape) {
+
+        .skills {
+    
+            .skill__content {
+                p {
+                    display: block; 
+                }
+            }
+        
+    }
+
+    .skills.collapsed {     
+        height: 100vh; 
+    }
+
+    .skills.collapsed .skill__content p {
+        display: block; 
+    }
+
+    .sections.collapsed {
+
+        height: auto; 
+      }
+
+    .skill__container {
+        margin: 1.5rem;
+
+
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    .skill__content {
+        line-height: 0.5em;
+
+        p {
+            padding: 1.2em;
+            margin-block: 0.5em;
+            font-size: 0.55em;
+        }
+    }
+
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) and (orientation: landscape) {
+        .skills {
+    
+            .skill__content {
+                p {
+                    display: block; 
+                }
+            }
+        
+    }
+
+    .skills.collapsed {     
+        height: 100vh; 
+    }
+
+    .skills.collapsed .skill__content p {
+        display: block; 
+    }
+
+    .sections.collapsed {
+
+        height: auto; 
+      }
+
+    .skill__container {
+        margin: 1.5rem;
+
+
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    .skill__content {
+        line-height: 0.5em;
+
+        p {
+            padding: 1.3em;
+            margin-block: 0.5em;
+            font-size: 0.8em;
+        }
+    }
     }
 
 

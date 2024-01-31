@@ -206,11 +206,11 @@
                 }
               }
 
-}
+    }
         
     
-//Normal Desktop
-@media (min-width: 1281px) {
+    //Normal Desktop
+    @media (min-width: 1281px) {
   .sections {
       height: 100vh; 
   }
@@ -262,9 +262,124 @@
       font-size: 0.98em;
       display: block;
   }
-}
+    }
 
+    
+    // mobile landscape
 
+    // Landscape mobile specific styles
+
+    @media (max-width: 768px) and (orientation: landscape) {
+
+      .sections {
+        height: 100vh; 
+    }
+
+  
+      .section__container {
+        flex-direction: row;       /* Make main axis horizontal */
+        
+      }
+
+      .sections.collapsed {
+
+        height: 100vh; 
+      }
+
+      .sections.collapsed .section__content p {
+        display: block; // Hide the content
+      }
+
+      .section__img {
+        flex: 1;   /* Take up any remaining space */
+        max-width: 50%; /* Limit to half the container width */
+    }
+      
+      .section__img img {
+        max-width: 100%;   /* Ensures the image never stretches beyond its container */
+        width: 100%;       /* Image will try to take full width of its container, but respects max-width */
+        height: auto;      /* Maintains the image's aspect ratio */
+        padding: 0.8em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */        
+    }
+      
+      .section__content {
+        line-height: 0.9em;
+        flex: 1;   /* Take up any remaining space */
+        max-width: 45%; /* Limit to half the container width */
+
+      
+        h1 {
+          font-size: 2em;
+          margin-bottom: 2.25rem;
+          order: -1; /* Place the H1 title at the top */
+          width: 100%; 
+        }
+      
+        p {
+          padding: 0.5em;
+          margin-block: 0.5em;
+          font-size: 0.55em;
+          display: block;
+        }
+      }
+
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) and (orientation: landscape) {
+      
+      .sections {
+        height: 100vh; 
+    }
+
+  
+      .section__container {
+        flex-direction: row;       /* Make main axis horizontal */
+        
+      }
+
+      .sections.collapsed {
+
+        height: 100vh; 
+      }
+
+      .sections.collapsed .section__content p {
+        display: block; // Hide the content
+      }
+
+      .section__img {
+        flex: 1;   /* Take up any remaining space */
+        max-width: 50%; /* Limit to half the container width */
+    }
+      
+      .section__img img {
+        max-width: 100%;   /* Ensures the image never stretches beyond its container */
+        width: 100%;       /* Image will try to take full width of its container, but respects max-width */
+        height: auto;      /* Maintains the image's aspect ratio */
+        padding: 0.8em;      /* Padding can be kept as it is, though you may want to use relative units like 'em' if desired */        
+    }
+      
+      .section__content {
+        line-height: 1.1em;
+        flex: 1;   /* Take up any remaining space */
+        max-width: 45%; /* Limit to half the container width */
+
+      
+        h1 {
+          font-size: 2em;
+          margin-bottom: 2.25rem;
+          order: -1; /* Place the H1 title at the top */
+          width: 100%; 
+        }
+      
+        p {
+          padding: 0.5em;
+          margin-block: 0.5em;
+          font-size: 0.8em;
+          display: block;
+        }
+      }
+    }
+    
 
 
     

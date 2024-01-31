@@ -37,7 +37,7 @@ const Skills = ({ isOpen, onToggle }) => {
   }, [isOpen]);
 
   return (
-    <div ref={skillsRef} className={`skills ${isOpen || windowWidth > 1024 ? '' : 'collapsed'}`} id="Skills">
+    <div ref={skillsRef} className={`skills ${isOpen || windowWidth >= 1024 ? '' : 'collapsed'}`} id="Skills">
       <div className="skill__container">
         <h1 onClick={handleToggle}>Skills</h1>
         <div className="skill__content">
