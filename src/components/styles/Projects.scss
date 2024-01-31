@@ -589,7 +589,12 @@
 
 
         &.collapsed {
-          height: 15vh;
+          height: 100vh;
+          display: block;
+        }
+
+        &.collapsed .box-container {
+          display: flex;
         }
 
       }
@@ -712,7 +717,7 @@
       .projects {
         width: 100%;
         padding: 2rem;
-        height: 80vh;
+        height: 100vh;
 
         .project-title {
 
@@ -727,7 +732,7 @@
         }
 
         &.collapsed {
-          height: 95vh;
+          height: 100vh;
           display: block;
         }
 
@@ -936,8 +941,6 @@
           margin-bottom: 2.125rem;
 
         }
-
-
 
 
         &.collapsed {

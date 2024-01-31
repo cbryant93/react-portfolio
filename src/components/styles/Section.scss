@@ -221,6 +221,15 @@
       align-items: stretch; // Stretch children to fill the container height
   }
 
+  .sections.collapsed {
+
+    height: auto; 
+  }
+
+  .sections.collapsed .section__content p {
+    display: block; // Hide the content
+  }
+
   .section__img, .section__content {
       flex: 1; // Both take up equal space
       max-width: 50%; // Limit to half the container width

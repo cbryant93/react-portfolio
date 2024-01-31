@@ -1,23 +1,34 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import './styles/Skills.scss';
 
 const Skills = ({ isOpen, onToggle }) => {
   const skillsRef = useRef(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleToggle = () => {
-    // Check if the window width is more than 1280px (desktop mode)
-    if (window.innerWidth > 1024) {
-      return; // Early return, no further code will be executed.
+    if (windowWidth > 1024) {
+      return;
     }
 
-    onToggle(); // Call the function passed from App to handle state change
+    onToggle();
 
-    if (!isOpen) { // If the section was closed
-      setTimeout(() => { // Wait for the transition to complete
-        skillsRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly into view
-      }, 300); // 300ms is the duration of your transition
+    if (!isOpen) {
+      setTimeout(() => {
+        skillsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
     }
-};
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -26,16 +37,16 @@ const Skills = ({ isOpen, onToggle }) => {
   }, [isOpen]);
 
   return (
-    <div ref={skillsRef} className={`skills ${isOpen ? '' : 'collapsed'}`} id="Skills">
+    <div ref={skillsRef} className={`skills ${isOpen || windowWidth > 1024 ? '' : 'collapsed'}`} id="Skills">
       <div className="skill__container">
-      <h1 onClick={handleToggle}>Skills</h1>
+        <h1 onClick={handleToggle}>Skills</h1>
         <div className="skill__content">
-                <p>Experience in frontend and backend development</p>
-                <p>Web Development</p>
-                <p>Java </p>
-                <p>SQL</p>
-                <p>Selenium + Cucumber</p>
-                <p>React</p>
+          <p>Experience in frontend and backend development</p>
+          <p>Web Development</p>
+          <p>Java</p>
+          <p>SQL</p>
+          <p>Selenium + Cucumber</p>
+          <p>React</p>
         </div>
       </div>
     </div>
