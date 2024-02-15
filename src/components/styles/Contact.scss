@@ -387,7 +387,7 @@
             font-size: 1.4em;
 
             .form {
-                height: 70vh;
+                height: 65vh;
 
                 input {
                     width: 70%;
@@ -414,9 +414,13 @@
 
         }
 
+        label {
+            font-size: 0.8em;
+        }
+
 
         .message {
-            height: 35%;
+            height: 30%;
             width: 70%;
             font-size: 0.7em;
 
