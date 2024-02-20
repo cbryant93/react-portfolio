@@ -61,7 +61,7 @@
       scroll-snap-type: x mandatory; // Enable smooth scrolling
       -webkit-overflow-scrolling: touch; // Enable momentum scrolling on iOS
       position: relative;
-      margin-bottom: 4em;
+      margin-bottom: 6em;
 
 
       button {
@@ -90,7 +90,7 @@
         margin-right: 20px;
         flex: 0 0 calc(95%);
         /* Same as the new width above */
-        height: 45vh;
+        height: 35vh;
         /* Same as the new height above */
         font-size: 1.5em;
 
@@ -189,7 +189,7 @@
       align-items: center;
       width: 90%;
       height: 95%;
-      overflow: hidden;
+      overflow: scroll;
       position: relative;
       flex-direction: column;
 
@@ -431,7 +431,7 @@
       .projects {
         width: 100%;
         padding: 2rem;
-        height: 100%;
+        height: 100vh;
 
         .project-title {
 
@@ -457,9 +457,6 @@
         max-width: 100vw;
         margin-bottom: 9em;
         padding: 1em;
-
-      
-
 
 
         .box {
@@ -574,7 +571,7 @@
       .projects {
         width: 100%;
         padding: 2rem;
-        height: 100%;
+        height: 100vh;
 
         .project-title {
 
@@ -589,12 +586,7 @@
 
 
         &.collapsed {
-          height: 100vh;
-          display: block;
-        }
-
-        &.collapsed .box-container {
-          display: flex;
+          height: 15vh;
         }
 
       }

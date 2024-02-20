@@ -28,7 +28,7 @@
         padding: 1rem;
         width: 100%;
         font-size: 1.2em;
-        height: 83vh;
+        height: 75vh;
         overflow: hidden; // add this line
         margin-top: 1em;
 
@@ -91,6 +91,7 @@
         outline: none;
         border: none;
         color: rgb(0, 129, 167);
+        font-size: 0.7em;
     }
 
     .message {
@@ -322,7 +323,7 @@
         }
 
         .inputs {
-            width: 60%; // Slightly wider on smaller screens
+            width: 50%; // Slightly wider on smaller screens
             font-size: 1em; // Adjust font size for readability
             height: 70vh;
     
@@ -336,8 +337,8 @@
                 button {
                     margin-top: 1rem; // Adjust margin for spacing]
                     margin: 1.5rem auto 0;
-                    width: 30%;
-                    height: 6%;
+                    width: 20%;
+                    height: 8%;
                     font-size: 0.7em;
                 }
     
@@ -455,7 +456,7 @@
         }
 
         .inputs {
-            width: 60%; // Slightly wider on smaller screens
+            width: 50%; // Slightly wider on smaller screens
             font-size: 1em; // Adjust font size for readability
             height: 70vh;
  
@@ -510,7 +511,7 @@
         }
 
         .inputs {
-            width: 60%; // Slightly wider on smaller screens
+            width: 50%; // Slightly wider on smaller screens
             font-size: 1.2em; // Adjust font size for readability
             height: 75vh;
  
